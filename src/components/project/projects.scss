@@ -59,7 +59,7 @@
                     border-radius: 10px;
 
                     @media (max-width: 1150px) {
-                        width: 100%; // Full width for single column layout
+                        width: 100%; 
                     }
 
                     .top {
@@ -67,17 +67,21 @@
                         justify-content: space-between;
                         align-items: center;
                         font-size: 1.2rem;
-
+                        .leftside{
+                            color:#caa6f7;
+                        }
                         .rightside {
                             display: flex;
                             gap: 1rem;
+                            // color:#FDBD6E; //work on this
                         }
                     }
 
                     .middle {
                         padding-block: 1.5rem;
-
+                        
                         .pheading {
+                            color:#b3dcf2;
                             font-size: 1.7rem;
 
                             @media (max-width: 900px) {
@@ -87,6 +91,7 @@
 
                         .desc {
                             font-size: 1.1rem;
+                            color:aliceblue;
                         }
                     }
 
@@ -94,6 +99,7 @@
                         display: flex;
                         align-items: center;
                         gap: 1rem;
+                        color:#bbf7d0;
 
                         .img {
                             font-size: 0.8rem;

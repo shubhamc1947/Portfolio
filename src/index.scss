@@ -2,9 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // font-family: "JetBrains Mono", monospace;
   font-family: "Space Grotesk", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+
 :root{
   /* --bgcolor:#1c1b22;
   --primaryColor:#1cf0a2; */

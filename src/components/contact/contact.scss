@@ -40,6 +40,7 @@
         h1 {
           font-size: 80px;
           line-height: 40px;
+          color:#caa6f7;
 
           @media (max-width: 900px) {
             font-size: 60px;
@@ -49,7 +50,10 @@
             font-size: 40px;
           }
         }
+        h2{
+          color:#FDBD6E;
 
+        }
         span {
           font-weight: 300;
         }

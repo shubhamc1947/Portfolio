@@ -16,7 +16,9 @@ const skillsdata = [
   { name: "Java", icon: "fa-brands fa-java" },
   { name: "Bash", icon: "fas fa-terminal" },
   { name: "Git", icon: "fa-brands fa-git" },
+  { name: "Many More", icon: "fa-solid fa-arrow-up-right-dots" },
 ];
+
 
 const Skills = () => {
   const variants = {

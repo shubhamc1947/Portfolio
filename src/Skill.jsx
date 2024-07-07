@@ -19,6 +19,7 @@ const skills = [
   'Git',
   'Redis',
   'Docker',
+  'ManyMore',
 ];
 
 const SkillTree = () => {

@@ -1,6 +1,6 @@
 
 import React from 'react'
-
+import { motion } from 'framer-motion';
 const color = [
     {
       bg: "#b3dcf2",
@@ -23,31 +23,36 @@ const color = [
 
 const ProjectCard = ({data,idx}) => {
   return (
-    <div className='projectcard' style={{boxShadow: `6px 6px 0px ${color[idx % 4].border}` }}>
-        <div className="top">
-            <div className="leftside">
-                shubhamc1947
-            </div>
-            <div className="rightside">
-                <a href={data.live}>Live</a>
-                <a href={data.github}>Github</a>
-            </div>
+    <motion.div
+      className='projectcard'
+      style={{ boxShadow: `6px 6px 0px ${color[idx % 4].border}` }}
+      whileHover={{ scale: 1.02 }}
+      whileTap={{ scale: 0.8 }}
+    >
+      <div className="top">
+        <div className="leftside">
+          shubhamc1947
         </div>
-        <div className="middle">
-            <div className="pheading">
-                {data.projectName}
-            </div>
-            <div className="desc">
-                {data.desc}
-            </div>
+        <div className="rightside">
+          <a href={data.live}>Live</a>
+          <a href={data.github}>Github</a>
         </div>
-        <div className="bottom">
-            <div className="img"><i className="fa-solid fa-code"></i></div>
-            <div className="techstack">
-                {data.techStack.map((item,idx)=><div key={idx} className='techstack'>  {item}</div>)}
-            </div>
+      </div>
+      <div className="middle">
+        <div className="pheading">
+          {data.projectName}
         </div>
-    </div>
+        <div className="desc">
+          {data.desc}
+        </div>
+      </div>
+      <div className="bottom">
+        <div className="img"><i className="fa-solid fa-code"></i></div>
+        <div className="techstack">
+          {data.techStack.map((item, idx) => <div key={idx} className='techstack'> {item}</div>)}
+        </div>
+      </div>
+    </motion.div>
   )
 }
 

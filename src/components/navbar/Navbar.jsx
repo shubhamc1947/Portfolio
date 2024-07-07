@@ -25,9 +25,9 @@ const Navbar = () => {
         <motion.div className="navlists" variants={variants}
             initial="initial"
             animate="animate" >
-          <motion.div  className="list"><a href="home">/</a></motion.div>
-          <motion.div  className="list"><a href="work">WORK</a></motion.div>
-          <motion.div  className="list"><a href="project">PROJECT</a></motion.div>
+          <motion.div  className="list"><a href="#home">/</a></motion.div>
+          <motion.div  className="list"><a href="#worksection">WORK</a></motion.div>
+          <motion.div  className="list"><a href="#projectsection">PROJECT</a></motion.div>
         </motion.div>
         <motion.div className="cvwrap"  data-tooltip-id="cv" data-tooltip-content="Download">
           <a href="" >CV</a>

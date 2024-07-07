@@ -9,33 +9,33 @@ import Contact from './components/contact/Contact'
 const App = () => {
   return (
     <div>
-      <section className='homesection'>
+      <section id="home" className='homesection'>
         <Hero/>
       </section>
       <hr />
-      <section className='aboutsection'>
+      <section id="about" className='aboutsection'>
         <About/>
       </section>
       <hr />
-      <section className='skilssection'>
+      <section id="skills" className='skilssection'>
         <Skills/>
         {/* <SkillTree/> */}
       </section>
       <hr />
 
-      <section className='worksection'>
+      <section id="worksection" className='worksection'>
         <Works/>
       </section>
       <hr />
 
-      <section className='projectsection'>
+      <section id="projectsection" className='projectsection'>
         <Projects/>
       </section>
 
       
       <hr />
 
-      <section className='contectsection'>
+      <section id="contact" className='contectsection'>
         <Contact/>
       </section>
     </div>
