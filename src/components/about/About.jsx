@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 
 const greetings = [
   'Hello',
-  'नमस्ते',
   'Hola',
   'Bonjour',
   'Hallo',

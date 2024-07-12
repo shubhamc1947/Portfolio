@@ -2,28 +2,15 @@ export const jobsData = [
   {
     id:"1",
     companyName: "Weknow Technology .",
-    roleName: "Full Stack Engineer Intern",
+    roleName: "Software Engineer Intern",
     workExperience: [
-      "• Developed a prototype to integrate real-time Discord announcements into the extension for enhanced functionality, Resulting a 25% boost in user retention.",
-      "• Optimitized backend, reducing response time by 100ms and enhancing flexibility for future modifications.",
-      "• Improved user experience and retention by 50% through UI issue resolution and enhanced responsiveness."
+      "• Designed and implemented an answer reevaluation module allowing students to apply for reevaluation or recheck of their examination copies. Reduced paperwork by 90%",
+      "• Optimitized backend, reducing response time by 100ms and enhancing flexibility for future modifications. Integrated Payment Gateway of CCAvenue in Knipss project, streamlining payment processes and enhancing user convenience",
+      "• Created an admin dashboard for UPRNSS organization, facilitating efficient management of government tenders and reducing manual workload by 90%"
     ],
     techStack: "Javascript, ReactJS, PHP , Mysql ,RESTful API , Ajax , JQuery ",
-    jobType: "Office Ayodhya",
-    jobDuration: "March 2024",
-    specialNote: "Work Culter is really great here..."
-  },{
-    id:"2",
-    companyName: "Weknow Technology .",
-    roleName: "Full Stack Engineer Intern",
-    workExperience: [
-      "• Developed a prototype to integrate real-time Discord announcements into the extension for enhanced functionality, Resulting a 25% boost in user retention.",
-      "• Optimitized backend, reducing response time by 100ms and enhancing flexibility for future modifications.",
-      "• Improved user experience and retention by 50% through UI issue resolution and enhanced responsiveness."
-    ],
-    techStack: "Javascript, ReactJS, PHP , Mysql ,RESTful API , Ajax , JQuery ",
-    jobType: "Office Ayodhya",
-    jobDuration: "March 2024",
+    jobType: "Office Lucknow",
+    jobDuration: "Oct 2023 - March 2024",
     specialNote: "Work Culter is really great here..."
   },
 ];

@@ -29,8 +29,8 @@ const WorkCard = ({ job }) => {
           />
         </div>
         <div className="rightcard">
-          <div className="type">{job.location}</div>
-          <div className="duration">{job.duration}</div>
+          <div className="type">{job.jobType}</div>
+          <div className="duration">{job.jobDuration}</div>
         </div>
       </div>
       <div className="middle">
