@@ -27,7 +27,7 @@ const ProjectCard = ({data,idx}) => {
       className='projectcard'
       style={{ boxShadow: `6px 6px 0px ${color[idx % 4].border}` }}
       whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.8 }}
+      
     >
       <div className="top">
         <div className="leftside">
