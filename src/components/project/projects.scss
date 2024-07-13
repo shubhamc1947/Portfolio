@@ -113,6 +113,7 @@
                         .techstack {
                             display: flex;
                             gap: 0.4rem;
+                            flex-wrap: wrap;
                             position: relative;
                             @media (max-width:339px) {
                                 font-size: 14px;
