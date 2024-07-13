@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import "./hero.scss";
 import Navbar from "../navbar/Navbar";
@@ -9,19 +9,22 @@ import "react-tooltip/dist/react-tooltip.css";
 import socialLinks from "./socialLinks";
 
 const Hero = () => {
+  const [showMessage, setShowMessage] = useState(false);
+
   const imgvar = {
     initial: { x: 0, opacity: 0.9 },
     animate: {
-      x: [-2, 2], 
-      y: [-1, 1], 
+      x: [-2, 2],
+      y: [-1, 1],
       opacity: 1,
       transition: {
-        duration: 2, 
+        duration: 2,
         ease: "linear",
-        repeat: Infinity, 
+        repeat: Infinity,
       },
     },
   };
+
   const leftvariants = {
     initial: {
       x: -500,
@@ -31,8 +34,8 @@ const Hero = () => {
       x: 0,
       opacity: 1,
       transition: {
-        type:"spring",
-        stiffness:40
+        type: "spring",
+        stiffness: 40,
       },
     },
   };
@@ -46,29 +49,38 @@ const Hero = () => {
       x: 0,
       opacity: 1,
       transition: {
-        type:"spring",
-        stiffness:40
+        type: "spring",
+        stiffness: 40,
       },
     },
   };
-  
+
+  const handleCopy = () => {
+    const textToCopy = 'npx shubhamc1947';
+
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      console.log('Text copied to clipboard');
+      setShowMessage(true);
+      setTimeout(() => setShowMessage(false), 5000); // Hide message after 5 seconds
+    }).catch(err => {
+      console.error('Failed to copy text: ', err);
+    });
+  };
+
   return (
     <>
       <Navbar />
       <motion.div className="hero">
         <motion.div className="wrapper">
-          {/* Add the animation here */}
           <motion.div className="trapper">
-              {[...Array(15)].map((_, idx) => (
-                <motion.div key={idx}>
-                  <span className="dot"></span>
-                </motion.div>
-              ))}
-            </motion.div>
-          <motion.div className="leftside"  variants={leftvariants}
-            initial="initial"
-            animate="animate">
-            <h1>SHUBHAM <span>Chaturvedi</span>  </h1>
+            {[...Array(15)].map((_, idx) => (
+              <motion.div key={idx}>
+                <span className="dot"></span>
+              </motion.div>
+            ))}
+          </motion.div>
+          <motion.div className="leftside" variants={leftvariants} initial="initial" animate="animate">
+            <h1>SHUBHAM <span>Chaturvedi</span></h1>
             <h3>Full Stack Wizard.</h3>
             <h3>Freelancer.</h3>
             <h4>
@@ -96,17 +108,26 @@ const Hero = () => {
               <button
                 data-tooltip-id="npx"
                 data-tooltip-content="npx shubhamc1947"
+                onClick={handleCopy}
               >
-                npx shubhamc1945
+                npx shubhamc1947
               </button>
               <Tooltip id="npx" className="tooltipcustom" />
             </motion.div>
+            {showMessage && (
+              <motion.div
+                className="copy-message"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+              >
+                <p style={{fontSize:"0.8rem"}}>Text copied to clipboard! <br />Make sure to run this in your terminal.</p>
+              </motion.div>
+            )}
           </motion.div>
-          <motion.div className="rightside" variants={rightvarients}
-            initial="initial"
-            animate="animate">
+          <motion.div className="rightside" variants={rightvarients} initial="initial" animate="animate">
             <motion.div className="imgcont">
-            <motion.img variants={imgvar} src="./hero3.jpg" alt="" />
+              <motion.img variants={imgvar} src="./hero3.jpg" alt="" />
             </motion.div>
           </motion.div>
         </motion.div>
