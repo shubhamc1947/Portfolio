@@ -89,6 +89,7 @@
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
+    height: 100%;
     .leftside {
       padding-top: 0;
 
@@ -118,6 +119,7 @@
 
 @media (max-width: 900px) {
   .hero .wrapper .leftside {
+    justify-content: center;
     h1 {
       span {
         display: block;
