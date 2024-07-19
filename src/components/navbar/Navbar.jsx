@@ -30,7 +30,7 @@ const Navbar = () => {
           <motion.div  className="list"><a href="#projectsection">PROJECT</a></motion.div>
         </motion.div>
         <motion.div className="cvwrap"  data-tooltip-id="cv" data-tooltip-content="Download">
-          <a href="https://drive.google.com/file/d/1NSmFReHUr-dOX_h9fd1HDPtZF3k5PV7I/view?usp=sharing" target="_blank" >CV</a>
+          <a href="https://drive.google.com/file/d/10fU4dzQfphtO5MlCUTkngMjHWNXr0N7C/view?usp=sharing" target="_blank" >CV</a>
         </motion.div>
       </motion.div>
           <Tooltip id="cv" className="tooltipcustom" />
