@@ -1,6 +1,19 @@
 export const jobsData = [
   {
     id:"1",
+    companyName: "Covrzy",
+    roleName: "Software Engineer Intern",
+    workExperience: [
+      "• Improved company webpage performance through advanced React optimization techniques, integrated Strapi CMS for blog automation, and implemented email support using the MSG91 API.",
+      "• – Developed scalable and maintainable web applications using Node.js, TypeScript, and React, ensuring efficiency and user-focused design",
+    ],
+    techStack: "Nodejs,ReactJs,Postgres,Typescript,Mysql,Strapi ",
+    jobType: "Office Bangalore",
+    jobDuration: "Oct 2024 - Present",
+    specialNote: "Seniors are super helpful here..."
+  },
+  {
+    id:"2",
     companyName: "Weknow Technology .",
     roleName: "Software Engineer Intern",
     workExperience: [

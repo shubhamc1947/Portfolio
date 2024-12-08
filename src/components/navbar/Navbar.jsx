@@ -1,9 +1,8 @@
-import React from "react";
 import "./navbar.scss";
 import { Tooltip } from 'react-tooltip'
 import "react-tooltip/dist/react-tooltip.css"; 
-import { motion, useInView } from "framer-motion";
-
+import { motion } from "framer-motion";
+import Resume from '../../assets/Shubham-SDE-1YOE.pdf';
 const Navbar = () => {
   const variants = {
     initial: {
@@ -30,7 +29,7 @@ const Navbar = () => {
           <motion.div  className="list"><a href="#projectsection">PROJECT</a></motion.div>
         </motion.div>
         <motion.div className="cvwrap"  data-tooltip-id="cv" data-tooltip-content="Download">
-          <a href="https://drive.google.com/file/d/10fU4dzQfphtO5MlCUTkngMjHWNXr0N7C/view?usp=sharing" target="_blank" >CV</a>
+          <a href={Resume} download={true}  target="_blank" >CV</a>
         </motion.div>
       </motion.div>
           <Tooltip id="cv" className="tooltipcustom" />
