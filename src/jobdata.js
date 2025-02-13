@@ -5,9 +5,9 @@ export const jobsData = [
     roleName: "Software Engineer Intern",
     workExperience: [
       "• Improved company webpage performance through advanced React optimization techniques, integrated Strapi CMS for blog automation, and implemented email support using the MSG91 API.",
-      "• – Developed scalable and maintainable web applications using Node.js, TypeScript, and React, ensuring efficiency and user-focused design",
+      "• Developed scalable and maintainable web applications using Node.js, TypeScript, and React, ensuring efficiency and user-focused design",
     ],
-    techStack: "Nodejs,ReactJs,Postgres,Typescript,Mysql,Strapi ",
+    techStack: "Nodejs, ReactJs, Postgres, Typescript, Mysql, Strapi, AWS, Rest API, MSG91 ",
     jobType: "Office Bangalore",
     jobDuration: "Oct 2024 - Present",
     specialNote: "Seniors are super helpful here..."
