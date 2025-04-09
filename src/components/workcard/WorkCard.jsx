@@ -16,7 +16,6 @@ const WorkCard = ({ job }) => {
             className="companyname"
             data-tooltip-id={`${job.id + 120}`}
             data-tooltip-content={job.specialNote}
-            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.8 }}
           >
             {job.companyName}

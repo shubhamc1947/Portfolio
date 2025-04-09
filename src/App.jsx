@@ -32,10 +32,7 @@ const App = () => {
       <section id="projectsection" className='projectsection'>
         <Projects/>
       </section>
-
-      
       <hr />
-
       <section id="contact" className='contectsection'>
         <Contact/>
       </section>
