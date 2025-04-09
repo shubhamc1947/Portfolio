@@ -82,7 +82,6 @@ const Hero = () => {
           <motion.div className="leftside" variants={leftvariants} initial="initial" animate="animate">
             <h1>SHUBHAM <span>Chaturvedi</span></h1>
             <h3>Full Stack Wizard.</h3>
-            <h3>Freelancer.</h3>
             <h4>
               Converts <span>air</span> into <span>code</span>
             </h4>
