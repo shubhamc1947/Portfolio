@@ -23,38 +23,46 @@ const projectData = [
     "desc": "Responsive e-commerce site with advanced search, filtering, and secure payment gateway.",
     "techStack": [ "Bootstrap", "React","dummyApi","RazorPay"]
   },
-  {
-    "name": "News Lelo",
-    "github": "https://github.com/shubhamc1947/news-lelo/",
-    "live": "https://github.com/shubhamc1947/news-lelo/",
-    "projectName": "News Lelo: Dynamic news platform",
-    "desc": "Dynamic news platform built with Bootstrap, PHP, MySQL, and jQuery. Features a user-centric interface and real-time content management system.",
-    "techStack": ["Bootstrap", "PHP", "MySQL", "jQuery"]
-  },
-  {
-    "name": "TicTacToe",
-    "github": "https://github.com/shubhamc1947/tic_tok_toiii_react",
-    "live": "https://tictaktoiii.vercel.app/",
-    "projectName": "TicTacToe: Let's Play",
-    "desc": "A simple and responsive Tic-Tac-Toe game built with React. Play against a friend and have fun .",
-    "techStack": ["React","Javascript", "CSS", "HTML"]
-  },
-  {
-    "name": "Todo List",
-    "github": "https://github.com/shubhamc1947/ToDo-List/",
-    "live": "https://shubhamc1947.github.io/ToDo-List/",
-    "projectName": "Todo List: Let's be productive",
-    "desc": "This is a simple todo list application built using HTML, CSS, and JavaScript. It saves data in the local storage and uses SweetAlert for displaying alerts.",
-    "techStack": ["Javascript", "CSS", "HTML", "LocalStorage","Sweetalert"]
-  },
-  {
-    "name": "Weather App",
-    "github": "https://github.com/shubhamc1947/weather_app/",
-    "live": "https://shubhamc1947.github.io/weather_app/",
-    "projectName": "Weather App: Info one click away ",
-    "desc": "The Weather App displays current weather for any city using HTML, CSS, JavaScript, and the OpenWeatherMap API, with a responsive design.",
-    "techStack": ["Javascript", "CSS", "HTML", "OpenWeatherMap"]
-  }
+  // {
+  //   "name": "News Lelo",
+  //   "github": "https://github.com/shubhamc1947/news-lelo/",
+  //   "live": "https://github.com/shubhamc1947/news-lelo/",
+  //   "projectName": "News Lelo: Dynamic news platform",
+  //   "desc": "Dynamic news platform built with Bootstrap, PHP, MySQL, and jQuery. Features a user-centric interface and real-time content management system.",
+  //   "techStack": ["Bootstrap", "PHP", "MySQL", "jQuery"]
+  // },
+  //  {
+  //   "name": "GameZone",
+  //   "github": "https://github.com/shubhamc1947/game-zone",
+  //   "live": "https://game-zone-8.netlify.app/",
+  //   "projectName": "GameZone: Let's Play",
+  //   "desc": "A simple word guessing game built with React. Guess the word by providing input.",
+  //   "techStack": ["React","Javascript"]
+  // },
+  // {
+  //   "name": "TicTacToe",
+  //   "github": "https://github.com/shubhamc1947/tic_tok_toiii_react",
+  //   "live": "https://tictaktoiii.vercel.app/",
+  //   "projectName": "TicTacToe: Let's Play",
+  //   "desc": "A simple and responsive Tic-Tac-Toe game built with React. Play against a friend and have fun .",
+  //   "techStack": ["React","Javascript", "CSS", "HTML"]
+  // },
+  // {
+  //   "name": "Todo List",
+  //   "github": "https://github.com/shubhamc1947/ToDo-List/",
+  //   "live": "https://shubhamc1947.github.io/ToDo-List/",
+  //   "projectName": "Todo List: Let's be productive",
+  //   "desc": "This is a simple todo list application built using HTML, CSS, and JavaScript. It saves data in the local storage and uses SweetAlert for displaying alerts.",
+  //   "techStack": ["Javascript", "CSS", "HTML", "LocalStorage","Sweetalert"]
+  // },
+  // {
+  //   "name": "Weather App",
+  //   "github": "https://github.com/shubhamc1947/weather_app/",
+  //   "live": "https://shubhamc1947.github.io/weather_app/",
+  //   "projectName": "Weather App: Info one click away ",
+  //   "desc": "The Weather App displays current weather for any city using HTML, CSS, JavaScript, and the OpenWeatherMap API, with a responsive design.",
+  //   "techStack": ["Javascript", "CSS", "HTML", "OpenWeatherMap"]
+  // }
 
 ];
 

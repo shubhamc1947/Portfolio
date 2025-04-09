@@ -9,7 +9,6 @@ const WorkCard = ({ job }) => {
     <motion.div
       className="workcard"
       whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.8 }}
     >
       <div className="top">
         <div className="leftcard">
