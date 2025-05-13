@@ -1,12 +1,16 @@
-import Hero from './components/hero/Hero'
-import About from './components/about/About'
-import Skills from './components/skills/Skills'
-import Works from './components/work/Works'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Hero from './components/hero/Hero';
+import About from './components/about/About';
+import Skills from './components/skills/Skills';
+import Works from './components/work/Works';
 import Projects from './components/project/Projects';
-import Contact from './components/contact/Contact'
-import { Analytics } from "@vercel/analytics/react"
-// import SkillTree from './Skill'
-const App = () => {
+import Contact from './components/contact/Contact';
+import Blog from './components/blog/Blog';
+import BlogPost from './components/blog/BlogPost';
+import { Analytics } from "@vercel/analytics/react";
+
+// Main homepage layout remains the same
+const HomePage = () => {
   return (
     <div>
       <section id="home" className='homesection'>
@@ -22,12 +26,10 @@ const App = () => {
         {/* <SkillTree/> */}
       </section>
       <hr />
-
       <section id="worksection" className='worksection'>
         <Works/>
       </section>
       <hr />
-
       <section id="projectsection" className='projectsection'>
         <Projects/>
       </section>
@@ -35,9 +37,21 @@ const App = () => {
       <section id="contact" className='contectsection'>
         <Contact/>
       </section>
-      <Analytics/>
     </div>
-  )
-}
+  );
+};
 
-export default App
+const App = () => {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+      </Routes>
+      <Analytics/>
+    </Router>
+  );
+};
+
+export default App;

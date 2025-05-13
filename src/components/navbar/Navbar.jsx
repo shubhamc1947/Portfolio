@@ -1,9 +1,12 @@
 import "./navbar.scss";
-import { Tooltip } from 'react-tooltip'
+import { Tooltip } from 'react-tooltip';
 import "react-tooltip/dist/react-tooltip.css"; 
 import { motion } from "framer-motion";
+import { Link, useLocation } from 'react-router-dom';
 import Resume from '../../assets/Shubham_Resume_FullStack_Engineer.pdf';
+
 const Navbar = () => {
+  const location = useLocation();
   const variants = {
     initial: {
       y: -50,
@@ -18,21 +21,62 @@ const Navbar = () => {
       },
     },
   };
+
+  // Check if we're on the blog pages
+  const isBlogPage = location.pathname.includes('/blog');
+
   return (
     <motion.div className="navbar">
       <motion.div className="wrapper" >
-        <motion.div className="navlists" variants={variants}
-            initial="initial"
-            animate="animate" >
-          <motion.div  className="list"><a href="#home">/</a></motion.div>
-          <motion.div  className="list"><a href="#worksection">WORK</a></motion.div>
-          <motion.div  className="list"><a href="#projectsection">PROJECT</a></motion.div>
+        <motion.div 
+          className="navlists" 
+          variants={variants}
+          initial="initial"
+          animate="animate" 
+        >
+          {/* If on blog page, use Link to navigate back to home */}
+          {isBlogPage ? (
+            <motion.div className="list">
+              <Link to="/">/</Link>
+            </motion.div>
+          ) : (
+            <motion.div className="list">
+              <a href="#home">/</a>
+            </motion.div>
+          )}
+          
+          {/* If on blog page, use Link for other navigation */}
+          {isBlogPage ? (
+            <>
+              <motion.div className="list">
+                <Link to="/#worksection">WORK</Link>
+              </motion.div>
+              <motion.div className="list">
+                <Link to="/#projectsection">PROJECT</Link>
+              </motion.div>
+              <motion.div className="list active">
+                <Link to="/blog">BLOG</Link>
+              </motion.div>
+            </>
+          ) : (
+            <>
+              <motion.div className="list">
+                <a href="#worksection">WORK</a>
+              </motion.div>
+              <motion.div className="list">
+                <a href="#projectsection">PROJECT</a>
+              </motion.div>
+              <motion.div className="list">
+                <Link to="/blog">BLOG</Link>
+              </motion.div>
+            </>
+          )}
         </motion.div>
-        <motion.div className="cvwrap"  data-tooltip-id="cv" data-tooltip-content="Download">
-          <a href={Resume} download={true}  target="_blank" >CV</a>
+        <motion.div className="cvwrap" data-tooltip-id="cv" data-tooltip-content="Download">
+          <a href={Resume} download={true} target="_blank" rel="noreferrer">CV</a>
         </motion.div>
       </motion.div>
-          <Tooltip id="cv" className="tooltipcustom" />
+      <Tooltip id="cv" className="tooltipcustom" />
     </motion.div>
   );
 };
