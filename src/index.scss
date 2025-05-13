@@ -19,9 +19,9 @@ html {
   --extraColor:#bbf7d0;
   --iconsColors:#FDBD6E;
 }
-::selection{
-  display: none;
-}
+// ::selection{
+//   display: none;
+// }
 
 body{
   /* background-color: var(--bgcolor); */
@@ -88,4 +88,28 @@ hr{
 
 .none{
   display: none;
+}
+
+
+/* Target the scrollbar */
+::-webkit-scrollbar {
+  width: 8px; /* For vertical scrollbar */
+  height: 8px; /* For horizontal scrollbar */
+}
+
+/* Track (background) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+/* Thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Thumb on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

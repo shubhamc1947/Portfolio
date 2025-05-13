@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-
+import PropTypes from 'prop-types'; 
 const color = [
   {
     bg: "#b3dcf2",
@@ -31,5 +30,12 @@ const SkillCard = ({ data, idx }) => {
     </motion.div>
   );
 }
+SkillCard.propTypes = {
+  data: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    icon: PropTypes.string.isRequired,
+  }).isRequired,
+  idx: PropTypes.number.isRequired,
+};
 
 export default SkillCard;

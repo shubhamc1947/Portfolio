@@ -8,7 +8,7 @@ export const jobsData = [
       "• Developed scalable and maintainable web applications using Node.js, TypeScript, and React, ensuring efficiency and user-focused design",
     ],
     techStack: "Nodejs, ReactJs, Postgres, Typescript, Mysql, Strapi, AWS, Rest API, MSG91, NextJs ",
-    jobType: "Office Bangalore",
+    jobType: "Hybrid Bangalore",
     jobDuration: "Oct 2024 - Present",
     specialNote: "Seniors are super helpful here..."
   },
@@ -21,7 +21,7 @@ export const jobsData = [
       "• Optimitized backend, reducing response time by 100ms and enhancing flexibility for future modifications. Integrated Payment Gateway of CCAvenue in Knipss project, streamlining payment processes and enhancing user convenience",
       "• Created an admin dashboard for UPRNSS organization, facilitating efficient management of government tenders and reducing manual workload by 90%"
     ],
-    techStack: "Javascript, ReactJS, PHP , Mysql ,RESTful API , Ajax , JQuery ",
+    techStack: "Javascript, ReactJS, PHP ,Mysql, RESTful API, Ajax, JQuery",
     jobType: "Office Lucknow",
     jobDuration: "Oct 2023 - March 2024",
     specialNote: "Work Culter is really great here..."

@@ -1,4 +1,3 @@
-import React from "react";
 import "./skills.scss";
 import SkillCard from "../skillcard/SkillCard";
 import { motion } from 'framer-motion';

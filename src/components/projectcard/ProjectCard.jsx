@@ -1,6 +1,5 @@
-
-import React from 'react'
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 const color = [
     {
       bg: "#b3dcf2",
@@ -55,5 +54,18 @@ const ProjectCard = ({data,idx}) => {
     </motion.div>
   )
 }
+
+ProjectCard.propTypes = {
+  data: PropTypes.shape({
+    live: PropTypes.string.isRequired,
+    github: PropTypes.string.isRequired,
+    projectName: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+    techStack: PropTypes.arrayOf(PropTypes.string).isRequired,
+  }).isRequired,
+  idx: PropTypes.number.isRequired,
+};
+
+
 
 export default ProjectCard

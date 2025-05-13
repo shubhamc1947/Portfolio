@@ -1,4 +1,3 @@
-import React from "react";
 import "./works.scss";
 import WorkCard from '../workcard/WorkCard';
 import { jobsData } from "../../jobdata";

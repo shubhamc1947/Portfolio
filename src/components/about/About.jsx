@@ -14,7 +14,6 @@ const greetings = [
   'こんにちは',
   '안녕하세요',
   'مرحبا',
-  'Γειά σου',
   'Merhaba',
   'Hej',
 ];
@@ -91,7 +90,7 @@ const About = () => {
             {renderLetters(greetings[index])}
           </motion.div>
           <div className='bottom'>
-            I’m <span className='red'>Shubham Chaturvedi</span>, a Full Stack Developer proficient in JavaScript, Python, Java, and C. I excel in React, Express, and Web Socket and Web RTC. I'm passionate about building innovative projects and always open to exciting opportunities.
+            I&apos;m <span className='red'>Shubham Chaturvedi</span>, a Full Stack Developer proficient in JavaScript, Python, Java, and C. I excel in React, Express, and Web Socket and Web RTC. I&apos;m passionate about building innovative projects and always open to exciting opportunities.
           </div>
         </div>
       </motion.div>
