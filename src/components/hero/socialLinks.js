@@ -2,7 +2,7 @@ const socialLinks=[
     {
       id:1,
       content:"Linkedin",
-      link:"https://www.linkedin.com/in/shubhamchat03/",
+      link:"https://www.linkedin.com/in/shubhamchat03",
       icon:"fa-brands fa-linkedin-in",
     },
     {

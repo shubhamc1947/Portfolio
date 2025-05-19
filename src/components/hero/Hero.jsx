@@ -86,23 +86,19 @@ const Hero = () => {
               Converts <span>air</span> into <span>code</span>
             </h4>
             <motion.div className="social">
-              {socialLinks.map((item, idx) => (
+              {socialLinks.map((item) => (
                 <a
                   key={item.id}
                   target="_blank"
                   href={item.link}
-                  data-tooltip-id={item.content}
+                  data-tooltip-id="global-tooltip"
                   data-tooltip-content={item.content}
                 >
                   <i className={item.icon}></i>
-                  <Tooltip
-                    key={idx + 500}
-                    id={item.content}
-                    className="tooltipcustom"
-                  />
                 </a>
               ))}
             </motion.div>
+            <Tooltip id="global-tooltip" className="tooltipcustom" />
             <motion.div className="btn">
               <button
                 data-tooltip-id="npx"
