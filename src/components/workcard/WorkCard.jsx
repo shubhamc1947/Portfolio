@@ -23,28 +23,26 @@ const color = [
   },
 ];
 const WorkCard = ({ job }) => {
+  const tooltipId = `tooltip-${job.id}`;
+  const colorIndex = Number(job.id) % 4;
 
   return (
     <motion.div
       className="workcard"
-      style={{ boxShadow: `6px 6px 0px ${color[job.id % 4].border}` }}
+      style={{ boxShadow: `6px 6px 0px ${color[colorIndex].border}` }}
       whileHover={{ scale: 1.02 }}
     >
       <div className="top">
         <div className="leftcard">
           <motion.div
             className="companyname"
-            data-tooltip-id={`${job.id + 120}`}
+            data-tooltip-id={tooltipId}
             data-tooltip-content={job.specialNote}
             whileTap={{ scale: 0.8 }}
           >
             {job.companyName}
           </motion.div>
-          <Tooltip
-            key={job.id + 500}
-            id={job.id + 120}
-            className="tooltipcustom"
-          />
+          <Tooltip id={tooltipId} className="tooltipcustom" />
         </div>
         <div className="rightcard">
           <div className="type">{job.jobType}</div>
@@ -54,10 +52,27 @@ const WorkCard = ({ job }) => {
       <div className="middle">
         <div className="rolename">{job.roleName}</div>
         <ul>
-          {job.workExperience.map((element, idx) => (
-            <li key={idx}>{element}</li>
+          {job.workExperience.map((line, idx) => (
+            <li key={idx}>
+              {line.map((fragment, i) =>
+                fragment.link ? (
+                  <a 
+                    key={i} 
+                    href={fragment.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="workCardExpAnchor"
+                  >
+                    {fragment.text}
+                  </a>
+                ) : (
+                  <span key={i}>{fragment.text}</span>
+                )
+              )}
+            </li>
           ))}
         </ul>
+
       </div>
       <div className="bottom">
         <div className="img">
@@ -68,6 +83,7 @@ const WorkCard = ({ job }) => {
     </motion.div>
   );
 };
+
 WorkCard.propTypes = {
   job: PropTypes.shape({
     id: PropTypes.number.isRequired,
