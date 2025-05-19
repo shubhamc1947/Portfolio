@@ -90,7 +90,7 @@ const About = () => {
             {renderLetters(greetings[index])}
           </motion.div>
           <div className='bottom'>
-            I&apos;m <span className='red'>Shubham Chaturvedi</span>, a Full Stack Developer proficient in JavaScript, Python, Java, and C. I excel in React, Express, and Web Socket and Web RTC. I&apos;m passionate about building innovative projects and always open to exciting opportunities.
+            I&apos;m <span className='red'>Shubham Chaturvedi</span>, a Full Stack Developer proficient in JavaScript, Typescript, ReactJs, NextJs, NodeJs. I excel in React, Express, and Web Socket and Web RTC. I&apos;m passionate about building innovative projects and always open to exciting opportunities.
           </div>
         </div>
       </motion.div>

@@ -2,7 +2,7 @@ import "./navbar.scss";
 import { Tooltip } from 'react-tooltip'
 import "react-tooltip/dist/react-tooltip.css"; 
 import { motion } from "framer-motion";
-import Resume from '../../assets/Shubham_Resume_FullStack_Engineer.pdf';
+import Resume from '../../assets/Shubham-1YOE-Softwrae-Engineer.pdf';
 const Navbar = () => {
   const variants = {
     initial: {
