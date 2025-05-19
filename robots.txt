@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shu8h.vercel.app/sitemap.xml
