@@ -4,6 +4,7 @@ export const jobsData = [
     companyName: "Covrzy",
     roleName: "Software Developer Engineer",
     workExperience: [
+      "• Integrated Slack Webhooks across all products ( Health, Liability ) to enable zero-delay client request routing to the sales team, reducing response time from 24 hours to 1 hours.",
       "• Improved company webpage performance through advanced React optimization techniques, integrated Strapi CMS for blog automation, and implemented email support using the MSG91 API.",
       "• Developed scalable and maintainable web applications using Node.js, TypeScript, and React, ensuring efficiency and user-focused design",
     ],
