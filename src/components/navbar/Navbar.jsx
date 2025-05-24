@@ -18,15 +18,27 @@ const Navbar = () => {
       },
     },
   };
+  const handleScroll = (e, id) => {
+    e.preventDefault();
+    const target = document.getElementById(id);
+    if (target) {
+      const offsetTop = target.offsetTop - 80; // 80px gap
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth"
+      });
+    }
+  };
+  
   return (
     <motion.div className="navbar">
       <motion.div className="wrapper" >
         <motion.div className="navlists" variants={variants}
             initial="initial"
             animate="animate" >
-          <motion.div  className="list"><a href="#home">/</a></motion.div>
-          <motion.div  className="list"><a href="#worksection">WORK</a></motion.div>
-          <motion.div  className="list"><a href="#projectsection">PROJECT</a></motion.div>
+          <motion.div className="list"><a href="#home" onClick={(e) => handleScroll(e, "home")}>/</a></motion.div>
+          <motion.div className="list"><a href="#worksection" onClick={(e) => handleScroll(e, "worksection")}>WORK</a></motion.div>
+          <motion.div className="list"><a href="#projectsection" onClick={(e) => handleScroll(e, "projectsection")}>PROJECT</a></motion.div>
         </motion.div>
         <motion.div className="cvwrap"  data-tooltip-id="cv" data-tooltip-content="Download">
           <a href={Resume} download={true}  target="_blank" >CV</a>

@@ -5,11 +5,9 @@ import emailjs from "@emailjs/browser";
 import socialLinks from "../hero/socialLinks";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
+import { scrollTopAnimation } from "../../store/utils";
 
-const variants = {
-  initial: { y: 100, opacity: 0.3 },
-  animate: { y: 0, opacity: 1, transition: { type: "spring", stiffness: 60 } },
-};
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -41,11 +39,11 @@ const Contact = () => {
 
   return (
     <>
-      <motion.div className="contact" variants={variants} initial="initial" whileInView="animate">
+      <motion.div className="contact" variants={scrollTopAnimation} initial="initial" whileInView="animate">
         <motion.div className="wrapper">
           <motion.div className="heading">Code: Contact</motion.div>
           <motion.div className="contactwrap">
-            <motion.div className="textContainer" variants={variants}>
+            <motion.div className="textContainer" variants={scrollTopAnimation}>
               <h1>Let’s Talk</h1>
               <motion.div className="item">
                 <h2>Mail</h2>
@@ -70,7 +68,7 @@ const Contact = () => {
         </motion.div>
       </motion.div>
       <hr />
-      <motion.div className="footer" variants={variants} initial="initial" whileInView="animate">
+      <motion.div className="footer" variants={scrollTopAnimation} initial="initial" whileInView="animate">
         <motion.div className="leftside">
           <motion.div className="icons">
             {socialLinks.map((item) => (

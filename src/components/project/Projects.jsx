@@ -3,34 +3,21 @@ import ProjectCard from '../projectcard/ProjectCard';
 import './projects.scss';
 import projectdata from  '../../projectdata';
 import { motion } from 'framer-motion';
+import { scrollTopAnimation, staggerCardVarient } from '../../store/utils';
 
 const Projects = () => {
   
-  const variants = {
-    initial: {
-      y: 100,
-      opacity: 0.3,
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 60,
-      },
-    }
-  };
   return (
-    <motion.div className='projects' variants={variants} initial="initial" whileInView="animate">
+    <motion.div className='projects' variants={scrollTopAnimation} initial="initial" whileInView="animate">
       <div className="wrapper">
         <div className="wrap">
           
           <div className="heading">
             Code : Projects
           </div>
-          <div className="lists">
+          <motion.div className="lists" variants={staggerCardVarient}>
             {projectdata.map((item,idx)=><ProjectCard key={idx} data={item} idx={idx}/>)}
-          </div>
+          </motion.div>
 
         </div>
       </div>

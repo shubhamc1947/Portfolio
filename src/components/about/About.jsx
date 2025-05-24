@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './about.scss';
 import { motion } from 'framer-motion';
+import { scrollTopAnimation } from '../../store/utils';
 
 const greetings = [
   'Hello',
@@ -37,21 +38,6 @@ const About = () => {
     ));
   };
 
-  const varient = {
-    initial: {
-      y: 100,
-      opacity: 0.3,
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 60,
-      },
-    },
-  };
-
   const letterVariants = {
     initial: {
       opacity: 0,
@@ -68,7 +54,7 @@ const About = () => {
     <div className='about'>
       <motion.div
         className='wrapper'
-        variants={varient}
+        variants={scrollTopAnimation}
         initial="initial"
         
         whileInView="animate"

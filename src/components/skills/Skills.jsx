@@ -1,6 +1,7 @@
 import "./skills.scss";
 import SkillCard from "../skillcard/SkillCard";
 import { motion } from 'framer-motion';
+import { scrollTopAnimation } from "../../store/utils";
 
 const skillsdata = [
   { name: "JavaScript", icon: "fa-brands fa-js" },
@@ -33,23 +34,10 @@ const skillsdata = [
 
 
 const Skills = () => {
-  const variants = {
-    initial: {
-      y: 100,
-      opacity: 0.3,
-    },
-    animate: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 60,
-      },
-    }
-  };
+
 
   return (
-    <motion.div className="skills" variants={variants} initial="initial" whileInView="animate">
+    <motion.div className="skills" variants={scrollTopAnimation} initial="initial" whileInView="animate">
       <motion.div className="wrapper">
         <motion.div className="cont">
           <motion.div className="wrap">
