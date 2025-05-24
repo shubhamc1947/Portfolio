@@ -61,7 +61,7 @@ const Contact = () => {
                 <textarea rows={8} placeholder="Message" name="message" value={formData.message} onChange={handleChange} />
                 <button disabled={isLoading}>{isLoading ? "Sending..." : "Submit"}</button>
                 {error && <p className="error">Something Went Wrong! Please try again 😢</p>}
-                {success && <p className="success">Email Sent Successfully ❤</p>}
+                {success && <p className="success">Got the mail , will react out soon ❤</p>}
               </form>
             </motion.div>
           </motion.div>
