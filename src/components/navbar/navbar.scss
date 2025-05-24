@@ -25,14 +25,17 @@
 
       .list {
         font-weight: 600;
-        padding: 0.5rem 1rem;
         transition: all 1s ease;
         border-radius: 10px;
-
+        
         &:hover {
           background-color: #caa6f7;
           color: #333;
           border-radius: 10px;
+        }
+        a{
+          padding: 0.5rem 1rem;
+          display: block;
         }
       }
     }
