@@ -30,7 +30,7 @@ export const jobsData = [
   {
     id:"2",
     companyName: "Weknow Technology .",
-    roleName: "Software Engineer Intern",
+    roleName: "Software Developer Engineer",
     workExperience: [
       [
         { text: "• Automated the exam reevaluation module in " },
@@ -46,9 +46,26 @@ export const jobsData = [
         { text: " Payroll System (HRMS) using Agile methodologies and SCM best practices, optimizing salary management for 1,000+ employees using TypeScript, MYSQL, NodeJs, and React." }
       ]
     ],
-    techStack: "Javascript, ReactJS, PHP ,Mysql, RESTful API, Ajax, JQuery",
+    techStack: "Javascript, ReactJS, PHP ,Mysql, RESTful API, Ajax, JQuery, Cpanel",
     jobType: "Office Lucknow",
-    jobDuration: "Oct 2023 - March 2024",
+    jobDuration: "Sept 2023 - March 2024",
     specialNote: "Work Culter is really great here..."
   },
+  {
+    id:"3",
+    companyName: "Weknow Technology .",
+    roleName: "Software Engineer Intern",
+    workExperience: [
+      [
+        { text: "• Designed and implemented a complete School ERP system, covering dynamic content management, real-time data interaction, and admin control features, significantly improving administrative efficiency and user experience." },
+      ],
+      [
+        { text: "• Built and optimized a robust Hotel Billing System, incorporating dynamic itemized billing, tax calculations, and printable invoice generation, streamlining day-to-day hotel operations and improving accuracy in financial reporting." }
+      ],
+    ],
+    techStack: "Javascript, Reactjs, PHP ,Mysql, RESTful API, Ajax, JQuery, Nodejs",
+    jobType: "Office Lucknow",
+    jobDuration: "Feb 2023 - August 2023",
+    specialNote: "Work Culter is really great here..."
+  }
 ];
