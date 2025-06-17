@@ -47,7 +47,10 @@ const Contact = () => {
           nofify("Got the mail, will reach out soom 😊")
           setFormData({ name: "", email: "", message: "" });
         },
-        () => setError(true)
+        () => {
+          nofify("Something went wrong 😢")
+          setError(true)
+        }
       )
       .finally(() => setIsLoading(false));
   };
