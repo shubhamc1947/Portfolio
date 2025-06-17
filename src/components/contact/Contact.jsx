@@ -6,6 +6,7 @@ import socialLinks from "../hero/socialLinks";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import { scrollTopAnimation } from "../../store/utils";
+import { toast } from "react-toastify";
 
 
 
@@ -18,9 +19,22 @@ const Contact = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+  const nofify = (msg) => toast(msg);
 
   const sendEmail = (e) => {
     e.preventDefault();
+    if (formData.name == "") {
+      nofify("Name is required")
+      return;
+    }
+    if (formData.email == "") {
+      nofify("Email is required")
+      return;
+    }
+    if (formData.message == "") {
+      nofify("Write me something 😀")
+      return;
+    }
     setIsLoading(true);
     setError(false);
     setSuccess(false);
@@ -30,6 +44,7 @@ const Contact = () => {
       .then(
         () => {
           setSuccess(true);
+          nofify("Got the mail, will reach out soom 😊")
           setFormData({ name: "", email: "", message: "" });
         },
         () => setError(true)
@@ -56,8 +71,8 @@ const Contact = () => {
             </motion.div>
             <motion.div className="formContainer">
               <form onSubmit={sendEmail}>
-                <input type="text" required placeholder="Name" name="name" value={formData.name} onChange={handleChange} />
-                <input type="email" required placeholder="Email" name="email" value={formData.email} onChange={handleChange} />
+                <input type="text"  placeholder="Name" name="name" value={formData.name} onChange={handleChange} />
+                <input type="email"  placeholder="Email" name="email" value={formData.email} onChange={handleChange} />
                 <textarea rows={8} placeholder="Message" name="message" value={formData.message} onChange={handleChange} />
                 <button disabled={isLoading}>{isLoading ? "Sending..." : "Submit"}</button>
                 {error && <p className="error">Something Went Wrong! Please try again 😢</p>}

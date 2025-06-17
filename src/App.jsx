@@ -5,6 +5,8 @@ import Works from './components/work/Works'
 import Projects from './components/project/Projects';
 import Contact from './components/contact/Contact'
 import { Analytics } from "@vercel/analytics/react"
+import { ToastContainer } from 'react-toastify';
+
 // import SkillTree from './Skill'
 const App = () => {
   return (
@@ -35,7 +37,8 @@ const App = () => {
       <section id="contact" className='contectsection'>
         <Contact/>
       </section>
-      <Analytics/>
+      <Analytics />
+      <ToastContainer/>
     </div>
   )
 }
