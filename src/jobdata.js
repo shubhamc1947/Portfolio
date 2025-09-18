@@ -22,8 +22,8 @@ export const jobsData = [
         { text: "• Developed scalable and maintainable web applications using Node.js, TypeScript, and React, ensuring efficiency and user-focused design." }
       ]
     ],
-    techStack: "Nodejs, ReactJs, Postgres, Typescript, Mysql, Strapi, AWS, Rest API, MSG91, NextJs ",
-    jobType: "Hybrid Bangalore",
+    techStack: "Golang, Nodejs, ReactJs, Postgres, Typescript, Mysql, Strapi, AWS, Rest API, MSG91, NextJs ",
+    jobType: "Hybrid, Bangalore",
     jobDuration: "Oct 2024 - Present",
     specialNote: "Seniors are super helpful here..."
   },
@@ -47,9 +47,9 @@ export const jobsData = [
       ]
     ],
     techStack: "Javascript, ReactJS, PHP ,Mysql, RESTful API, Ajax, JQuery, Cpanel",
-    jobType: "Office Lucknow",
+    jobType: "Office, Lucknow",
     jobDuration: "Sept 2023 - March 2024",
-    specialNote: "Work Culter is really great here..."
+    specialNote: "Work Culture is really great here..."
   },
   {
     id:"3",
@@ -66,6 +66,6 @@ export const jobsData = [
     techStack: "Javascript, Reactjs, PHP ,Mysql, RESTful API, Ajax, JQuery, Nodejs",
     jobType: "Office Lucknow",
     jobDuration: "Feb 2023 - August 2023",
-    specialNote: "Work Culter is really great here..."
+    specialNote: "Work Culture is really great here..."
   }
 ];

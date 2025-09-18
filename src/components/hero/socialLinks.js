@@ -17,5 +17,11 @@ const socialLinks=[
       link:"https://github.com/shubhamc1947",
       icon:"fa-brands fa-github",
     },
+    {
+      id:4,
+      content:"Medium",
+      link:"https://medium.com/@shubhamchat224122",
+      icon:"fa-brands fa-medium",
+    }
   ]
   export default socialLinks;

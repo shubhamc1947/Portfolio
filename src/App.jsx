@@ -15,10 +15,12 @@ const App = () => {
         <Hero/>
       </section>
       <hr />
+
       <section id="about" className='aboutsection'>
         <About/>
       </section>
       <hr />
+
       <section id="skills" className='skilssection'>
         <Skills/>
         {/* <SkillTree/> */}
@@ -34,6 +36,7 @@ const App = () => {
         <Projects/>
       </section>
       <hr />
+      
       <section id="contact" className='contectsection'>
         <Contact/>
       </section>
