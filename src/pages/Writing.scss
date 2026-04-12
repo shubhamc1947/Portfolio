@@ -1,0 +1,62 @@
+// src/pages/Writing.scss
+@use '../styles/mixins';
+
+.writing-page {
+  padding-top: calc(var(--nav-height) + var(--space-16));
+
+  &__inner {
+    @include mixins.container;
+    padding-bottom: var(--space-20);
+  }
+
+  &__title {
+    @include mixins.heading-xl;
+    margin-bottom: var(--space-4);
+  }
+
+  &__sub {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    max-width: 520px;
+    margin-bottom: var(--space-10);
+  }
+
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-10);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.filter-pill {
+  background: transparent;
+  border: 1px solid var(--color-border);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: var(--color-text);
+    color: var(--color-text);
+  }
+
+  &--active {
+    background: var(--color-text);
+    color: var(--color-bg);
+    border-color: var(--color-text);
+  }
+}
