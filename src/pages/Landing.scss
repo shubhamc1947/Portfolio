@@ -1,0 +1,349 @@
+// src/pages/Landing.scss
+@use '../styles/mixins';
+
+.landing {
+  padding-top: var(--nav-height);
+}
+
+// Hero
+.hero {
+  min-height: calc(100vh - var(--nav-height));
+  display: flex;
+  align-items: center;
+
+  &__inner {
+    @include mixins.container;
+    padding-block: var(--space-20);
+  }
+
+  &__label {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--color-text-muted);
+    display: block;
+    margin-bottom: var(--space-6);
+  }
+
+  &__title {
+    @include mixins.heading-xl;
+    margin-bottom: var(--space-6);
+
+    &--faded {
+      opacity: 0.15;
+      transition: opacity 0.8s ease;
+    }
+  }
+
+  &__sub {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+    max-width: 520px;
+    line-height: 1.5;
+    margin-bottom: var(--space-8);
+  }
+
+  &__ctas {
+    display: flex;
+    gap: var(--space-3);
+  }
+}
+
+// Buttons
+.btn {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: all 0.2s;
+  display: inline-block;
+
+  &--primary {
+    background: var(--color-text);
+    color: var(--color-bg);
+    border: 1px solid var(--color-text);
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  &--secondary {
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+
+    &:hover {
+      border-color: var(--color-text);
+    }
+  }
+}
+
+// Philosophy
+.philosophy {
+  @include mixins.section-padding;
+  text-align: center;
+
+  &__quote {
+    @include mixins.container;
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    line-height: 1.3;
+    max-width: 680px;
+    letter-spacing: -0.5px;
+
+    @media (max-width: 768px) {
+      font-size: var(--text-2xl);
+    }
+  }
+
+  &__attr {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--space-4);
+  }
+}
+
+// Writing Preview
+.writing-preview {
+  @include mixins.section-padding;
+  background: var(--color-bg);
+
+  &__inner {
+    @include mixins.container;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: var(--space-10);
+
+    h2 {
+      @include mixins.heading-lg;
+    }
+
+    a {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 2px;
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--color-text);
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// Work Preview
+.work-preview {
+  @include mixins.section-padding;
+
+  &__inner {
+    @include mixins.container;
+  }
+
+  &__heading {
+    @include mixins.heading-lg;
+    margin-bottom: var(--space-6);
+  }
+}
+
+.work-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-8) 0;
+  border-bottom: 1px solid var(--color-border);
+  text-decoration: none;
+  color: inherit;
+
+  &:hover .work-card__arrow {
+    transform: translateX(4px);
+  }
+
+  &__left {
+    h3 {
+      font-size: var(--text-xl);
+      font-weight: 600;
+      margin-bottom: var(--space-1);
+    }
+  }
+
+  &__role {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+  }
+
+  &__highlight {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--space-2);
+    font-style: italic;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+    flex-shrink: 0;
+  }
+
+  &__duration {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+
+    @media (max-width: 576px) {
+      display: none;
+    }
+  }
+
+  &__arrow {
+    font-size: var(--text-xl);
+    color: var(--color-border);
+    transition: transform 0.2s;
+  }
+}
+
+// Skills
+.skills-section {
+  @include mixins.section-padding;
+
+  &__inner {
+    @include mixins.container;
+  }
+
+  &__heading {
+    @include mixins.heading-lg;
+    margin-bottom: var(--space-10);
+  }
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skill-group {
+  &__title {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+}
+
+.skill-pill {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+// Projects
+.projects-section {
+  @include mixins.section-padding;
+
+  &__inner {
+    @include mixins.container;
+  }
+
+  &__heading {
+    @include mixins.heading-lg;
+    margin-bottom: var(--space-10);
+  }
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 576px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    border-color: var(--color-border-hover);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  &__name {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--space-2);
+  }
+
+  &__desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    margin-bottom: var(--space-4);
+  }
+
+  &__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-bottom: var(--space-4);
+  }
+
+  &__links {
+    display: flex;
+    gap: var(--space-4);
+
+    a {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--color-text);
+      }
+    }
+  }
+}
