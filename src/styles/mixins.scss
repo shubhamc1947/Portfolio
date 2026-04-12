@@ -1,0 +1,54 @@
+// src/styles/mixins.scss
+
+@mixin container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-inline: var(--space-10);
+
+  @media (max-width: 768px) {
+    padding-inline: var(--space-6);
+  }
+}
+
+@mixin reading-width {
+  max-width: var(--reading-width);
+  margin: 0 auto;
+}
+
+@mixin section-padding {
+  padding-block: var(--space-20);
+
+  @media (max-width: 768px) {
+    padding-block: var(--space-12);
+  }
+}
+
+@mixin label {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--color-text-muted);
+}
+
+@mixin heading-xl {
+  font-size: var(--text-5xl);
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.05;
+
+  @media (max-width: 768px) {
+    font-size: var(--text-3xl);
+    letter-spacing: -1px;
+  }
+}
+
+@mixin heading-lg {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.1;
+
+  @media (max-width: 768px) {
+    font-size: var(--text-2xl);
+  }
+}
