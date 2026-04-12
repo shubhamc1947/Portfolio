@@ -1,0 +1,133 @@
+// src/pages/CaseStudy.scss
+@use '../styles/mixins';
+
+.case-study {
+  padding-top: calc(var(--nav-height) + var(--space-12));
+
+  &__inner {
+    @include mixins.reading-width;
+    padding-inline: var(--space-6);
+    padding-bottom: var(--space-20);
+  }
+
+  &__back {
+    display: inline-block;
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-10);
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--color-text);
+    }
+  }
+
+  &__header {
+    margin-bottom: var(--space-10);
+  }
+
+  &__duration {
+    @include mixins.label;
+    display: block;
+    margin-bottom: var(--space-4);
+  }
+
+  &__title {
+    font-size: var(--text-5xl);
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin-bottom: var(--space-2);
+
+    @media (max-width: 768px) {
+      font-size: var(--text-3xl);
+    }
+  }
+
+  &__role {
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+  }
+
+  &__intro {
+    font-size: var(--text-xl);
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+    margin-bottom: var(--space-16);
+    max-width: 600px;
+  }
+
+  &__sections {
+    margin-bottom: var(--space-16);
+  }
+
+  &__section {
+    margin-bottom: var(--space-12);
+
+    h2 {
+      font-size: var(--text-2xl);
+      font-weight: 700;
+      margin-bottom: var(--space-4);
+    }
+
+    p {
+      font-size: var(--text-base);
+      line-height: 1.75;
+      color: var(--color-text-secondary);
+    }
+  }
+
+  &__tech {
+    margin-bottom: var(--space-10);
+
+    h3 {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-4);
+    }
+  }
+
+  &__pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+
+  &__products {
+    h3 {
+      font-size: var(--text-xs);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-4);
+    }
+  }
+
+  &__product-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-6);
+
+    a {
+      font-size: var(--text-sm);
+      color: var(--color-text-secondary);
+      transition: color 0.2s;
+
+      &:hover {
+        color: var(--color-text);
+      }
+    }
+  }
+}
+
+// Duplicated from Landing.scss — needed when case study page is visited directly
+// without Landing.scss being loaded
+.skill-pill {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  padding: var(--space-1) var(--space-4);
+  border-radius: var(--radius-pill);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
