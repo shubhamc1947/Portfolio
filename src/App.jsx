@@ -1,49 +1,24 @@
-import Hero from './components/hero/Hero'
-import About from './components/about/About'
-import Skills from './components/skills/Skills'
-import Works from './components/work/Works'
-import Projects from './components/project/Projects';
-import Contact from './components/contact/Contact'
-import { Analytics } from "@vercel/analytics/react"
-import { ToastContainer } from 'react-toastify';
+import { Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
+import Navbar from './components/Navbar';
+import Landing from './pages/Landing';
+import Writing from './pages/Writing';
+import Article from './pages/Article';
+import CaseStudy from './pages/CaseStudy';
 
-// import SkillTree from './Skill'
 const App = () => {
   return (
-    <div>
-      <section id="home" className='homesection'>
-        <Hero/>
-      </section>
-      <hr />
-
-      <section id="about" className='aboutsection'>
-        <About/>
-      </section>
-      <hr />
-
-      <section id="skills" className='skilssection'>
-        <Skills/>
-        {/* <SkillTree/> */}
-      </section>
-      <hr />
-
-      <section id="worksection" className='worksection'>
-        <Works/>
-      </section>
-      <hr />
-
-      <section id="projectsection" className='projectsection'>
-        <Projects/>
-      </section>
-      <hr />
-      
-      <section id="contact" className='contectsection'>
-        <Contact/>
-      </section>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/writing" element={<Writing />} />
+        <Route path="/writing/:slug" element={<Article />} />
+        <Route path="/work/:slug" element={<CaseStudy />} />
+      </Routes>
       <Analytics />
-      <ToastContainer/>
-    </div>
-  )
-}
+    </>
+  );
+};
 
-export default App
+export default App;
