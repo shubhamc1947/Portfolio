@@ -1,27 +1,33 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import articles from '../data/articles';
 import social from '../data/social';
 import './CommandPalette.scss';
-
-const scrollToId = (id) => {
-  const el = document.getElementById(id);
-  if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' });
-};
 
 const CommandPalette = ({ open, onClose }) => {
   const [q, setQ] = useState('');
   const [sel, setSel] = useState(0);
   const inputRef = useRef(null);
   const navigate = useNavigate();
+  const location = useLocation();
+  const isHome = location.pathname === '/';
+
+  const goToSection = (id) => {
+    if (isHome) {
+      const el = document.getElementById(id);
+      if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' });
+    } else {
+      navigate('/', { state: { scrollTo: id } });
+    }
+  };
 
   const commands = useMemo(() => {
     const jumps = [
       { group: 'navigate', icon: '§', title: 'Home', hint: 'g h', action: () => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); } },
       { group: 'navigate', icon: '§', title: 'Writing', hint: 'g r', action: () => navigate('/writing') },
-      { group: 'navigate', icon: '§', title: 'Skills', hint: 'g s', action: () => scrollToId('skills') },
-      { group: 'navigate', icon: '§', title: 'Projects', hint: 'g p', action: () => scrollToId('projects') },
-      { group: 'navigate', icon: '§', title: 'Contact', hint: 'g c', action: () => scrollToId('contact') },
+      { group: 'navigate', icon: '§', title: 'Skills', hint: 'g s', action: () => goToSection('skills') },
+      { group: 'navigate', icon: '§', title: 'Projects', hint: 'g p', action: () => goToSection('projects') },
+      { group: 'navigate', icon: '§', title: 'Contact', hint: 'g c', action: () => goToSection('contact') },
     ];
     const actions = [
       { group: 'actions', icon: '↓', title: 'Copy email address', hint: 'shubhamchat224122@gmail.com', action: () => { navigator.clipboard?.writeText('shubhamchat224122@gmail.com'); } },

@@ -1,9 +1,15 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import './Navbar.scss';
 
+const scrollToEl = (id) => {
+  const el = document.getElementById(id);
+  if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' });
+};
+
 const Navbar = ({ onOpenCmd }) => {
   const location = useLocation();
+  const navigate = useNavigate();
   const isHome = location.pathname === '/';
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -15,15 +21,16 @@ const Navbar = ({ onOpenCmd }) => {
     return () => window.removeEventListener('scroll', on);
   }, []);
 
-  // Close menu on route change
   useEffect(() => { setMenuOpen(false); }, [location.pathname]);
 
-  const scrollToId = (e, id) => {
-    if (!isHome) return;
+  const handleSectionClick = (e, id) => {
     e.preventDefault();
     setMenuOpen(false);
-    const el = document.getElementById(id);
-    if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' });
+    if (isHome) {
+      scrollToEl(id);
+    } else {
+      navigate('/', { state: { scrollTo: id } });
+    }
   };
 
   return (
@@ -37,8 +44,8 @@ const Navbar = ({ onOpenCmd }) => {
           </Link>
           <div className="nav__links">
             <Link to="/writing" className="nav__link-desktop">Writing</Link>
-            <Link to={isHome ? '#work' : '/'} className="nav__link-desktop" onClick={isHome ? (e) => scrollToId(e, 'work') : undefined}>Work</Link>
-            <Link to={isHome ? '#contact' : '/'} className="nav__link-desktop" onClick={isHome ? (e) => scrollToId(e, 'contact') : undefined}>Contact</Link>
+            <a href="/#work" className="nav__link-desktop" onClick={(e) => handleSectionClick(e, 'work')}>Work</a>
+            <a href="/#contact" className="nav__link-desktop" onClick={(e) => handleSectionClick(e, 'contact')}>Contact</a>
             {onOpenCmd && (
               <button className="nav__cmd" onClick={onOpenCmd} title="Command palette">
                 <span className="nav__cmd-label">Search</span>
@@ -55,8 +62,8 @@ const Navbar = ({ onOpenCmd }) => {
         <div className="mobile-menu" onClick={() => setMenuOpen(false)}>
           <div className="mobile-menu__inner" onClick={e => e.stopPropagation()}>
             <Link to="/writing" onClick={() => setMenuOpen(false)}>Writing</Link>
-            <Link to={isHome ? '#work' : '/'} onClick={(e) => { if (isHome) { scrollToId(e, 'work'); } else { setMenuOpen(false); } }}>Work</Link>
-            <Link to={isHome ? '#contact' : '/'} onClick={(e) => { if (isHome) { scrollToId(e, 'contact'); } else { setMenuOpen(false); } }}>Contact</Link>
+            <a href="/#work" onClick={(e) => handleSectionClick(e, 'work')}>Work</a>
+            <a href="/#contact" onClick={(e) => handleSectionClick(e, 'contact')}>Contact</a>
             {onOpenCmd && (
               <button onClick={() => { setMenuOpen(false); onOpenCmd(); }}>Search ⌘K</button>
             )}
