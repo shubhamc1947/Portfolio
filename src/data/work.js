@@ -1,33 +1,58 @@
-// src/data/work.js
-
 const work = [
+  {
+    slug: 'shifu',
+    company: 'Shifu Ventures',
+    role: 'Product Engineer',
+    year: '2026 - now',
+    highlight: 'Building internal tools, databases, and zero-to-one products for a venture studio - end-to-end across frontend, backend, and deploy.',
+    techStack: ['TypeScript', 'React', 'Next.js', 'Node.js', 'PostgreSQL', 'AWS', 'Vercel'],
+    metrics: [
+      { value: '0→1', label: 'products' },
+      { value: 'E2E', label: 'ownership' },
+      { value: 'Studio', label: '+ portfolio' },
+    ],
+    content: {
+      intro: 'Product engineer at a venture studio - I build software for the studio itself and for the portfolio companies it incubates. Internal tools, internal databases, operational dashboards, and the occasional zero-to-one product.',
+      sections: [
+        {
+          title: 'End-to-end ownership',
+          body: 'Front-end, back-end, deployment - all mine. Every project is owned from sketch to production, which means I make the calls on stack, architecture, and shipping cadence.',
+        },
+        {
+          title: 'Close to the founders',
+          body: 'Working directly with the founders, co-founders, and software veterans who run the studio. The feedback loop is short, the context is dense, and the learning compounds fast.',
+        },
+      ],
+      products: [],
+    },
+  },
   {
     slug: 'covrzy',
     company: 'Covrzy',
     role: 'Software Developer Engineer',
-    duration: '2024 — Present',
-    highlight: 'Built AWS infra handling 400K+ reservations/month with <200ms response time',
-    techStack: ['Golang', 'Node.js', 'React', 'PostgreSQL', 'TypeScript', 'MySQL', 'AWS', 'Strapi', 'Next.js'],
+    year: '2024 - 2026',
+    highlight: 'Built AWS infra handling 600K+ bookings/month at sub-200ms p95 - drove 966K+ impressions and 12.6K+ clicks in 5 months.',
+    techStack: ['Go', 'TypeScript', 'Node.js', 'React', 'Next.js', 'PostgreSQL', 'AWS'],
+    metrics: [
+      { value: '600K+', label: 'monthly bookings' },
+      { value: '<200ms', label: 'p95 response' },
+      { value: '99.9%', label: 'uptime' },
+    ],
     content: {
-      intro: 'At Covrzy, I work on the core insurance infrastructure — building scalable backend systems that power multiple product lines.',
+      intro: 'At Covrzy, I worked on the core insurance infrastructure - building scalable backend systems that power multiple product lines.',
       sections: [
         {
           title: 'Scaling Reservation Infrastructure',
-          body: 'Created and implemented scalable AWS infrastructure using Golang that handles 400K+ reservations per month with a response time of less than 200ms and a 99.9% uptime rate.',
+          body: 'Architected and optimized AWS infra (EC2, S3, RDS, API Gateway, ALB, CloudWatch) for Travel APIs - 600K+ monthly bookings, 99.9% uptime, <200ms averages.',
         },
         {
-          title: 'Eliminating Communication Delays',
-          body: 'Reduced client response time from 24 hours to 1 hour by integrating Slack Webhooks into all products (Health, Liability) for zero-delay client request routing. Integrated MSG91 email API and Heltar WhatsApp API for instantaneous communication.',
+          title: 'Product Reach',
+          body: 'Shipped web apps in Node/TS/React for Health and Liability that drove 966K+ impressions and 12.6K+ clicks within 5 months of launch.',
         },
         {
-          title: 'Product Development',
-          body: 'Developed scalable web applications using Node.js, TypeScript, and React. Implemented Strapi CMS for blog automation at covrzy.com/blog.',
+          title: 'Ops Velocity',
+          body: 'Cut client response time from 24h to 1h by integrating Slack Webhooks across every product for zero-delay request routing. Added MSG91 + Heltar WhatsApp to the stack.',
         },
-      ],
-      metrics: [
-        { value: '400K+', label: 'Reservations/mo' },
-        { value: '<200ms', label: 'Response time' },
-        { value: '99.9%', label: 'Uptime' },
       ],
       products: [
         { name: 'Blog', url: 'https://covrzy.com/blog' },
@@ -37,34 +62,30 @@ const work = [
   {
     slug: 'weknow',
     company: 'Weknow Technology',
-    role: 'Software Developer Engineer → Intern',
-    duration: '2023 — 2024',
-    highlight: 'Engineered government survey portal serving 60,000+ users across Uttar Pradesh',
-    techStack: ['JavaScript', 'React', 'PHP', 'MySQL', 'Node.js', 'TypeScript', 'jQuery'],
+    role: 'SDE → Intern',
+    year: '2023 - 24',
+    highlight: 'Engineered a government survey portal serving 60,000+ users across Uttar Pradesh.',
+    techStack: ['JavaScript', 'React', 'PHP', 'MySQL', 'Node.js', 'TypeScript'],
+    metrics: [
+      { value: '60K+', label: 'users' },
+      { value: '1,000+', label: 'employees' },
+      { value: '5→1 day', label: 'process time' },
+    ],
     content: {
-      intro: 'My first engineering role — started as an intern building school ERPs, grew into building government-scale systems serving tens of thousands of users.',
+      intro: 'My first engineering role - started as an intern building school ERPs, grew into building government-scale systems serving tens of thousands of users.',
       sections: [
         {
-          title: 'College ERP & Payment Integration',
-          body: 'Automated the exam reevaluation module in KNIPSS College ERP, enabling online recheck applications and integrating CCAvenue Payment Gateway. Decreased manual process time from 5 days to 1 day.',
+          title: 'Government Survey Portal',
+          body: 'Designed and shipped a survey portal that collected data from 60K+ users across Uttar Pradesh, with multi-layer verification and automated ID-card generation.',
         },
         {
-          title: 'Government Survey Portal',
-          body: 'Engineered and designed a government survey portal that collected data from over 60,000+ users across Uttar Pradesh. Implemented multi-layer verification and automated ID card generation.',
+          title: 'College ERP & Payment Integration',
+          body: 'Automated the exam re-evaluation flow at KNIPSS - integrated CCAvenue payments, cut manual process from 5 days to 1.',
         },
         {
           title: 'Payroll System (HRMS)',
-          body: 'Developed UPRNSS Payroll System using Agile methodologies, optimizing salary management for 1,000+ employees using TypeScript, MySQL, Node.js, and React.',
+          body: 'Built UPRNSS Payroll for 1,000+ employees using TypeScript, MySQL, Node.js, and React.',
         },
-        {
-          title: 'Internship — Foundation Building',
-          body: 'Designed a complete School ERP system covering dynamic content management, real-time data interaction, and admin control. Built and optimized a Hotel Billing System with itemized billing, tax calculations, and printable invoice generation.',
-        },
-      ],
-      metrics: [
-        { value: '60K+', label: 'Users served' },
-        { value: '1,000+', label: 'Employees managed' },
-        { value: '5→1 day', label: 'Process time cut' },
       ],
       products: [
         { name: 'KNIPSS', url: 'https://knipssexams.in/' },

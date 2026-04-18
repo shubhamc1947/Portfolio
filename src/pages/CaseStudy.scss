@@ -1,175 +1,182 @@
-// src/pages/CaseStudy.scss
 @use '../styles/mixins';
 
 .case-study {
-  padding-top: calc(var(--nav-height) + var(--space-12));
+  padding-top: calc(var(--nav-h) + 48px);
 
   &__inner {
     @include mixins.reading-width;
-    padding-inline: var(--space-6);
-    padding-bottom: var(--space-20);
+    padding-inline: clamp(20px, 5vw, 32px);
+    padding-bottom: clamp(64px, 9vw, 96px);
   }
 
   &__back {
-    display: inline-block;
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-    margin-bottom: var(--space-10);
-    transition: color 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--mono);
+    font-size: 11.5px;
+    color: var(--ink-3);
+    margin-bottom: clamp(24px, 5vw, 40px);
+    transition: color 0.15s;
 
-    &:hover {
-      color: var(--color-text);
-    }
+    &:hover { color: var(--accent); }
   }
 
   &__header {
-    margin-bottom: var(--space-10);
+    margin-bottom: clamp(28px, 5vw, 40px);
   }
 
   &__duration {
-    @include mixins.label;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
     display: block;
-    margin-bottom: var(--space-4);
+    margin-bottom: 16px;
   }
 
   &__title {
-    font-size: var(--text-5xl);
-    font-weight: 800;
-    letter-spacing: -2px;
-    margin-bottom: var(--space-2);
-
-    @media (max-width: 768px) {
-      font-size: var(--text-3xl);
-    }
+    font-family: var(--sans);
+    font-size: clamp(30px, 6vw, 60px);
+    font-weight: 600;
+    letter-spacing: -0.028em;
+    line-height: 1.06;
+    margin-bottom: 8px;
+    text-wrap: balance;
   }
 
   &__role {
-    font-size: var(--text-lg);
-    color: var(--color-text-secondary);
+    font-size: 17px;
+    color: var(--ink-3);
   }
 
   &__intro {
-    font-size: var(--text-xl);
-    color: var(--color-text-secondary);
+    font-size: clamp(15px, 3.6vw, 17px);
+    color: var(--ink-3);
     line-height: 1.6;
-    margin-bottom: var(--space-10);
+    margin-bottom: clamp(28px, 5vw, 40px);
     max-width: 600px;
   }
 
   &__metrics {
     display: flex;
-    gap: var(--space-10);
-    padding: var(--space-8) 0;
-    border-top: 1px solid var(--color-border);
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: var(--space-16);
+    flex-wrap: wrap;
+    gap: clamp(20px, 5vw, 40px);
+    padding: 32px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 48px;
 
     @media (max-width: 576px) {
-      flex-direction: column;
-      gap: var(--space-6);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
     }
   }
 
-  &__metric {
-    display: flex;
-    flex-direction: column;
-  }
+  &__metric { display: flex; flex-direction: column; }
 
   &__metric-value {
-    font-size: var(--text-4xl);
-    font-weight: 800;
-    letter-spacing: -1px;
+    font-family: var(--sans);
+    font-size: clamp(24px, 5.5vw, 40px);
+    font-weight: 600;
+    letter-spacing: -0.025em;
     line-height: 1;
-    margin-bottom: var(--space-1);
-
-    @media (max-width: 768px) {
-      font-size: var(--text-2xl);
-    }
+    margin-bottom: 4px;
+    font-variant-numeric: tabular-nums;
   }
 
   &__metric-label {
-    font-size: var(--text-xs);
+    font-family: var(--mono);
+    font-size: 10.5px;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--color-text-muted);
+    letter-spacing: 0.14em;
+    color: var(--ink-4);
   }
 
-  &__sections {
-    margin-bottom: var(--space-16);
-  }
+  &__sections { margin-bottom: 48px; }
 
   &__section {
-    margin-bottom: var(--space-12);
+    margin-bottom: clamp(28px, 5vw, 40px);
 
     h2 {
-      font-size: var(--text-2xl);
-      font-weight: 700;
-      margin-bottom: var(--space-4);
+      font-family: var(--sans);
+      font-size: clamp(18px, 4vw, 24px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
     }
 
     p {
-      font-size: var(--text-base);
-      line-height: 1.75;
-      color: var(--color-text-secondary);
+      font-family: var(--serif);
+      font-size: clamp(15px, 3.8vw, 17px);
+      line-height: 1.65;
+      color: var(--ink-2);
+      font-weight: 400;
+      font-variation-settings: "opsz" 14;
     }
   }
 
   &__tech {
-    margin-bottom: var(--space-10);
+    margin-bottom: 32px;
 
     h3 {
-      font-size: var(--text-xs);
+      font-family: var(--mono);
+      font-size: 10.5px;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--color-text-muted);
-      margin-bottom: var(--space-4);
+      letter-spacing: 0.18em;
+      color: var(--ink-4);
+      margin-bottom: 12px;
+      font-weight: 500;
     }
   }
 
   &__pills {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-2);
+    gap: 5px;
   }
 
   &__products {
     h3 {
-      font-size: var(--text-xs);
+      font-family: var(--mono);
+      font-size: 10.5px;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: var(--color-text-muted);
-      margin-bottom: var(--space-4);
+      letter-spacing: 0.18em;
+      color: var(--ink-4);
+      margin-bottom: 12px;
+      font-weight: 500;
     }
   }
 
   &__product-links {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-6);
+    gap: 24px;
 
     a {
-      font-size: var(--text-sm);
-      color: var(--color-text-secondary);
-      transition: color 0.2s;
+      font-size: 13px;
+      color: var(--ink-3);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 2px;
+      transition: color 0.15s, border-color 0.15s;
 
-      &:hover {
-        color: var(--color-text);
-      }
+      &:hover { color: var(--accent); border-color: var(--accent); }
     }
   }
 }
 
 .skill-pill {
-  font-size: 13px;
-  color: var(--color-text-secondary);
-  line-height: 1.4;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--ink-3);
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface);
+}
 
-  &::after {
-    content: ',';
-    color: var(--color-text-muted);
-  }
-
-  &:last-child::after {
-    content: '';
-  }
+@media (max-width: 576px) {
+  .case-study { padding-top: calc(var(--nav-h) + 28px); }
 }

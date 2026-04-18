@@ -14,7 +14,7 @@ const articles = [
   {
     slug: 'scaling-sitemap-millions-pages',
     title: 'Do You Really Know How to Scale sitemap.xml for Millions of Dynamic Pages?',
-    description: 'A scenario where your e-commerce site hits 10,000 products — and your sitemap strategy falls apart.',
+    description: 'A scenario where your e-commerce site hits 10,000 products - and your sitemap strategy falls apart.',
     tag: 'Scale',
     date: '2025-07-03',
     readingTime: '10 min',
@@ -24,7 +24,7 @@ const articles = [
   {
     slug: 'speeding-up-backend-database-indexing',
     title: 'Speeding Up Your Backend with Database Indexing',
-    description: 'That moment where your app starts to feel sluggish — and the fix is simpler than you think.',
+    description: 'That moment where your app starts to feel sluggish - and the fix is simpler than you think.',
     tag: 'Backend',
     date: '2025-05-10',
     readingTime: '7 min',
@@ -34,7 +34,7 @@ const articles = [
   {
     slug: 'what-happens-when-you-type-url',
     title: 'What Happens When You Type a URL in Your Browser?',
-    description: 'The journey from www.google.com to pixels on your screen — every step explained.',
+    description: 'The journey from www.google.com to pixels on your screen - every step explained.',
     tag: 'Fundamentals',
     date: '2025-06-16',
     readingTime: '12 min',
@@ -64,7 +64,7 @@ const articles = [
   {
     slug: 'html-best-practices-seo',
     title: 'HTML Best Practices: Structuring for SEO and Clarity',
-    description: 'Writing clean and semantic HTML isn\'t just aesthetics — it\'s how search engines understand your site.',
+    description: 'Writing clean and semantic HTML isn\'t just aesthetics - it\'s how search engines understand your site.',
     tag: 'Frontend',
     date: '2025-05-19',
     readingTime: '6 min',
@@ -94,7 +94,7 @@ const articles = [
   {
     slug: 'google-docs-dynamic-template-certificates',
     title: 'Have You Ever Tried Google Docs As a Dynamic Template For Generating Certificates, Invoices…',
-    description: 'A classic problem solved differently — using Google Docs API instead of PDF libraries.',
+    description: 'A classic problem solved differently - using Google Docs API instead of PDF libraries.',
     tag: 'Backend',
     date: '2025-06-22',
     readingTime: '8 min',

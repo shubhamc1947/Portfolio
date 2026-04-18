@@ -1,13 +1,13 @@
-// src/pages/Landing.jsx
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import ScrollReveal from '../components/ScrollReveal';
+import { motion, useReducedMotion } from 'framer-motion';
+import Reveal from '../components/Reveal';
 import ArticleCard from '../components/ArticleCard';
 import Footer from '../components/Footer';
 import articles from '../data/articles';
 import work from '../data/work';
 import skills from '../data/skills';
 import projects from '../data/projects';
+import beyond from '../data/beyond';
 import './Landing.scss';
 
 const featuredSlugs = [
@@ -17,187 +17,259 @@ const featuredSlugs = [
   'what-happens-when-you-type-url',
 ];
 
+const PRIMARY_SKILLS = new Set(['TypeScript', 'Go', 'React', 'Node.js', 'PostgreSQL', 'AWS']);
+
+const scrollToId = (id) => {
+  const el = document.getElementById(id);
+  if (el) window.scrollTo({ top: el.offsetTop - 70, behavior: 'smooth' });
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.2, 0.8, 0.2, 1] } },
+};
+
+const noMotion = {
+  hidden: { opacity: 1, y: 0 },
+  show: { opacity: 1, y: 0 },
+};
+
 const Landing = () => {
-  const featured = featuredSlugs
-    .map((slug) => articles.find((a) => a.slug === slug))
-    .filter(Boolean);
+  const featured = featuredSlugs.map(s => articles.find(a => a.slug === s)).filter(Boolean);
+  const reduce = useReducedMotion();
+  const v = reduce ? noMotion : fadeUp;
+
+  const handleWorkMove = (e) => {
+    const card = e.currentTarget;
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+    card.style.setProperty('--my', `${e.clientY - r.top}px`);
+  };
 
   return (
     <main className="landing">
       {/* Hero */}
-      <section className="hero">
-        <div className="hero__inner">
-          <motion.span
-            className="hero__label"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            Software Engineer · Writer
-          </motion.span>
-          <motion.h1
-            className="hero__title"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, ease: 'easeOut' }}
-          >
-            I think deeply about<br />the systems I build.
-            <span className="hero__title--faded"><br />Then I write about them.</span>
+      <section className="hero" id="top">
+        <motion.div
+          className="hero__inner"
+          initial="hidden"
+          animate="show"
+          variants={reduce ? { hidden: { opacity: 1 }, show: { opacity: 1 } } : {
+            hidden: { opacity: 0 },
+            show: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+          }}
+        >
+          <motion.div className="hero__eyebrow" variants={v}>Software Engineer · Writer</motion.div>
+          <motion.h1 className="hero__title" variants={v}>
+            I think deeply about<br />
+            the systems I <em>build</em>.<br />
+            <span className="hero__faded">Then I write about them.</span>
           </motion.h1>
-          <motion.p
-            className="hero__sub"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-          >
-            Software Engineer at Covrzy, building infrastructure that handles 400K+
-            reservations/month. I write about the craft of engineering — from scaling
-            sitemaps to chasing ghost bugs.
+          <motion.p className="hero__sub" variants={v}>
+            <b>Product engineer</b> at Shifu Ventures - building internal tools and zero-to-one products across a venture studio + its portfolio. Previously scaled insurance infra at Covrzy to <b>600K+ bookings/month</b>. I write about the craft along the way.
           </motion.p>
-          <motion.div
-            className="hero__ctas"
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.4 }}
-          >
-            <Link to="/writing" className="btn btn--primary">Read my writing →</Link>
-            <a href="#work" className="btn btn--secondary"
-              onClick={(e) => {
-                e.preventDefault();
-                document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-            >
-              See my work →
+          <motion.div className="hero__ctas" variants={v}>
+            <a href="#writing" className="btn btn--primary" onClick={(e) => { e.preventDefault(); scrollToId('writing'); }}>
+              Read my writing <span className="btn__arr">→</span>
+            </a>
+            <a href="#work" className="btn btn--secondary" onClick={(e) => { e.preventDefault(); scrollToId('work'); }}>
+              See my work <span className="btn__arr">→</span>
             </a>
           </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Marquee ticker */}
+      <section className="ticker" aria-hidden="true">
+        <div className="ticker__track">
+          {[...Array(2)].map((_, dup) => (
+            <div className="ticker__group" key={dup}>
+              <span className="ticker__item">600K+ bookings / month</span>
+              <span className="ticker__dot">●</span>
+              <span className="ticker__item">966K+ impressions</span>
+              <span className="ticker__dot">●</span>
+              <span className="ticker__item">12.6K+ clicks</span>
+              <span className="ticker__dot">●</span>
+              <span className="ticker__item">99.9% uptime</span>
+              <span className="ticker__dot">●</span>
+              <span className="ticker__item">Sub-200ms p95</span>
+              <span className="ticker__dot">●</span>
+              <span className="ticker__item">60K+ gov users served</span>
+              <span className="ticker__dot">●</span>
+              <span className="ticker__item">600+ DSA problems</span>
+              <span className="ticker__dot">●</span>
+              <span className="ticker__item">20+ essays published</span>
+              <span className="ticker__dot">●</span>
+              <span className="ticker__item">250+ students mentored</span>
+              <span className="ticker__dot">●</span>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Philosophy */}
-      <section className="philosophy">
-        <ScrollReveal>
-          <blockquote className="philosophy__quote">
-            "Most engineers ship features.<br />
-            I think about why the feature exists,<br />
-            then build it so it lasts."
-          </blockquote>
-          <p className="philosophy__attr">— That's the thread through everything below.</p>
-        </ScrollReveal>
+      <section className="philo shell">
+        <Reveal y={8}>
+          <div className="philo__mark">&ldquo;</div>
+          <p className="philo__quote">
+            Most engineers ship features.<span className="philo__break"><br /></span>
+            I think about <span className="philo__accent">why</span> the feature exists,<span className="philo__break"><br /></span>
+            then build it so it lasts.
+          </p>
+          <div className="philo__attr">- the thread through everything below</div>
+        </Reveal>
       </section>
 
-      {/* Featured Writing */}
-      <section className="writing-preview">
-        <div className="writing-preview__inner">
-          <ScrollReveal>
-            <div className="writing-preview__header">
-              <h2>Writing</h2>
-              <Link to="/writing">View all articles →</Link>
+      {/* Writing */}
+      <section className="block shell" id="writing">
+        <div className="shell">
+          <Reveal>
+            <div className="sec-head">
+              <div>
+                <div className="sec-label">§ 01 · Writing</div>
+                <h2 className="sec-title">Essays on the <em>craft</em>.</h2>
+              </div>
+              <Link className="sec-link" to="/writing">
+                View all writing <span className="sec-link__arr">→</span>
+              </Link>
             </div>
-          </ScrollReveal>
-          <div className="writing-preview__grid">
-            {featured.map((article, i) => (
-              <ScrollReveal key={article.slug} delay={i * 0.1}>
-                <ArticleCard article={article} index={i} />
-              </ScrollReveal>
-            ))}
-          </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <div className="writing-grid">
+              {featured.map(a => <ArticleCard key={a.slug} article={a} />)}
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Work */}
-      <section className="work-preview" id="work">
-        <div className="work-preview__inner">
-          <ScrollReveal>
-            <h2 className="work-preview__heading">Work</h2>
-          </ScrollReveal>
-          <div className="work-preview__grid">
-            {work.map((job, i) => (
-              <ScrollReveal key={job.slug} delay={i * 0.15}>
-                <Link to={`/work/${job.slug}`} className="work-card">
-                  <div className="work-card__header">
+      <section className="work-slab" id="work">
+        <div className="shell">
+          <Reveal>
+            <div className="sec-head">
+              <div>
+                <div className="sec-label" style={{ color: 'var(--night-ink-3)' }}>§ 02 · Work</div>
+                <h2 className="sec-title" style={{ color: '#fff' }}>Where I&apos;ve <em>shipped</em>.</h2>
+              </div>
+              <Link className="sec-link" to="/work/shifu" style={{ color: 'var(--night-ink-2)', borderColor: 'var(--night-line)' }}>
+                View all work <span className="sec-link__arr">→</span>
+              </Link>
+            </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <div className="work-list">
+              {work.map(j => (
+                <Link key={j.slug} to={`/work/${j.slug}`} className="work-card" onMouseMove={handleWorkMove}>
+                  <div className="work-card__head">
                     <div>
-                      <h3 className="work-card__company">{job.company}</h3>
-                      <span className="work-card__role">{job.role}</span>
+                      <div className="work-card__company">{j.company}</div>
+                      <div className="work-card__role">{j.role}</div>
                     </div>
-                    <span className="work-card__duration">{job.duration}</span>
+                    <div className="work-card__year">{j.year}</div>
                   </div>
-                  <p className="work-card__highlight">{job.highlight}</p>
-                  {job.content.metrics && (
-                    <div className="work-card__metrics">
-                      {job.content.metrics.map((m) => (
-                        <div key={m.label} className="work-card__metric">
-                          <span className="work-card__metric-value">{m.value}</span>
-                          <span className="work-card__metric-label">{m.label}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                  <div className="work-card__footer">
-                    <div className="work-card__techs">
-                      {job.techStack.slice(0, 4).map((t) => (
-                        <span key={t} className="work-card__tech">{t}</span>
-                      ))}
-                      {job.techStack.length > 4 && (
-                        <span className="work-card__tech">+{job.techStack.length - 4}</span>
-                      )}
-                    </div>
-                    <span className="work-card__cta">Read case study →</span>
+                  <p className="work-card__highlight">{j.highlight}</p>
+                  <div className="work-card__metrics">
+                    {j.metrics.map(m => (
+                      <div className="work-card__metric" key={m.label}>
+                        <div className="work-card__metric-v">{m.value}</div>
+                        <div className="work-card__metric-l">{m.label}</div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="work-card__stack">
+                    {j.techStack.slice(0, 5).map(s => <span key={s} className="chip">{s}</span>)}
+                    {j.techStack.length > 5 && <span className="chip chip--more">+{j.techStack.length - 5}</span>}
+                  </div>
+                  <div className="work-card__cta">
+                    <span>Read case study</span>
+                    <span className="work-card__cta-arr">→</span>
                   </div>
                 </Link>
-              </ScrollReveal>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Skills */}
-      <section className="skills-section">
-        <div className="skills-section__inner">
-          <ScrollReveal>
-            <h2 className="skills-section__heading">Tools &amp; Technologies</h2>
-          </ScrollReveal>
-          <div className="skills-grid">
-            {skills.map((group, i) => (
-              <ScrollReveal key={group.category} delay={i * 0.05}>
-                <div className="skill-group">
-                  <h4 className="skill-group__title">{group.category}</h4>
-                  <div className="skill-group__items">
-                    {group.items.map((skill) => (
-                      <span key={skill} className="skill-pill">{skill}</span>
+      <section className="block block--tight shell" id="skills">
+        <div className="shell">
+          <Reveal>
+            <div className="sec-head">
+              <div>
+                <div className="sec-label">§ 03 · Stack</div>
+                <h2 className="sec-title">What I reach for <em>daily</em>.</h2>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <div className="stack-band">
+              {skills.map(g => (
+                <div className="stack-row" key={g.category}>
+                  <div className="stack-row__k">{g.category}</div>
+                  <div className="stack-row__v">
+                    {g.items.map(s => (
+                      <span key={s} className={`stack-item ${PRIMARY_SKILLS.has(s) ? 'stack-item--primary' : ''}`}>{s}</span>
                     ))}
                   </div>
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 
       {/* Projects */}
-      <section className="projects-section">
-        <div className="projects-section__inner">
-          <ScrollReveal>
-            <h2 className="projects-section__heading">Projects</h2>
-          </ScrollReveal>
-          <div className="projects-grid">
-            {projects.map((project, i) => (
-              <ScrollReveal key={project.name} delay={i * 0.1}>
-                <div className="project-card">
-                  <h3 className="project-card__name">{project.name}</h3>
-                  <p className="project-card__desc">{project.description}</p>
-                  <div className="project-card__stack">
-                    {project.techStack.map((t) => (
-                      <span key={t} className="skill-pill">{t}</span>
-                    ))}
-                  </div>
-                  <div className="project-card__links">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href={project.live} target="_blank" rel="noopener noreferrer">Live →</a>
+      <section className="block shell" id="projects">
+        <div className="shell">
+          <Reveal>
+            <div className="sec-head">
+              <div>
+                <div className="sec-label">§ 04 · Side projects</div>
+                <h2 className="sec-title">Shipped on weekends.</h2>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <div className="proj-list">
+              {projects.map(p => (
+                <div className="proj-row" key={p.name}>
+                  <div className="proj-row__name">{p.name}</div>
+                  <div className="proj-row__desc">{p.description}</div>
+                  <div className="proj-row__stack">{p.techStack.join(' · ')}</div>
+                  <div className="proj-row__links">
+                    <a href={p.github} target="_blank" rel="noreferrer">Source ↗</a>
+                    <a href={p.live} target="_blank" rel="noreferrer">Live ↗</a>
                   </div>
                 </div>
-              </ScrollReveal>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Beyond */}
+      <section className="block shell" id="beyond">
+        <div className="shell">
+          <Reveal>
+            <div className="sec-head">
+              <div>
+                <div className="sec-label">§ 05 · Beyond the job</div>
+                <h2 className="sec-title">What I do when <em>no one&apos;s paying me</em>.</h2>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <div className="beyond-grid">
+              {beyond.map((b, i) => (
+                <div className="beyond-card" key={i}>
+                  <div className="beyond-card__value">{b.value}<span className="beyond-card__unit">{b.unit}</span></div>
+                  <div className="beyond-card__label">{b.label}</div>
+                  <div className="beyond-card__desc">{b.desc}</div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 

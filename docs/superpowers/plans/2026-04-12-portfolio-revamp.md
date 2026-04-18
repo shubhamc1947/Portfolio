@@ -4,7 +4,7 @@
 
 **Goal:** Rebuild Shubham's portfolio as a storyteller-style, mind-first, clean modernist site with a cinematic landing scroll and dedicated subpages for writing and case studies.
 
-**Architecture:** Hybrid SPA with React Router — a single-page cinematic scroll as the landing, plus dedicated routes for `/writing`, `/writing/:slug`, `/work/covrzy`, and `/work/weknow`. Content stored as JS data files and Markdown. Design system built on CSS custom properties.
+**Architecture:** Hybrid SPA with React Router - a single-page cinematic scroll as the landing, plus dedicated routes for `/writing`, `/writing/:slug`, `/work/covrzy`, and `/work/weknow`. Content stored as JS data files and Markdown. Design system built on CSS custom properties.
 
 **Tech Stack:** React 18, Vite, React Router, Framer Motion, SCSS with design tokens, react-markdown + remark-gfm + rehype-highlight for articles, Vercel Analytics.
 
@@ -16,7 +16,7 @@
 
 ```
 src/
-├── main.jsx                          # Entry — wrap App in BrowserRouter
+├── main.jsx                          # Entry - wrap App in BrowserRouter
 ├── App.jsx                           # Routes definition
 ├── styles/
 │   ├── tokens.scss                   # Design tokens (colors, spacing, type scale)
@@ -35,7 +35,7 @@ src/
 │       ├── speeding-up-backend-database-indexing.md
 │       └── what-happens-when-you-type-url.md
 ├── components/
-│   ├── Navbar.jsx                    # Top nav — logo, links, responsive
+│   ├── Navbar.jsx                    # Top nav - logo, links, responsive
 │   ├── Navbar.scss
 │   ├── Footer.jsx                    # Dark contact footer
 │   ├── Footer.scss
@@ -45,11 +45,11 @@ src/
 ├── pages/
 │   ├── Landing.jsx                   # Full landing scroll (hero → philosophy → writing → work → skills → projects → footer)
 │   ├── Landing.scss
-│   ├── Writing.jsx                   # /writing — article index with filters
+│   ├── Writing.jsx                   # /writing - article index with filters
 │   ├── Writing.scss
-│   ├── Article.jsx                   # /writing/:slug — single article reader
+│   ├── Article.jsx                   # /writing/:slug - single article reader
 │   ├── Article.scss
-│   ├── CaseStudy.jsx                 # /work/:slug — case study page
+│   ├── CaseStudy.jsx                 # /work/:slug - case study page
 │   └── CaseStudy.scss
 ```
 
@@ -260,7 +260,7 @@ Replace `src/index.scss` entirely:
 @use 'styles/global';
 ```
 
-- [ ] **Step 5: Update index.html — swap fonts, remove Font Awesome & Umami**
+- [ ] **Step 5: Update index.html - swap fonts, remove Font Awesome & Umami**
 
 Replace the Google Fonts link with Inter + JetBrains Mono. Remove Font Awesome CDN link. Remove Umami analytics script. Keep all OG/meta/JSON-LD tags.
 
@@ -277,7 +277,7 @@ Remove these lines:
 
 - [ ] **Step 6: Delete old style files**
 
-Delete `src/app.scss` (no longer needed — App.jsx won't import it).
+Delete `src/app.scss` (no longer needed - App.jsx won't import it).
 
 - [ ] **Step 7: Verify build works**
 
@@ -363,11 +363,11 @@ const work = [
     slug: 'covrzy',
     company: 'Covrzy',
     role: 'Software Developer Engineer',
-    duration: '2024 — Present',
+    duration: '2024 - Present',
     highlight: 'Built AWS infra handling 400K+ reservations/month with <200ms response time',
     techStack: ['Golang', 'Node.js', 'React', 'PostgreSQL', 'TypeScript', 'MySQL', 'AWS', 'Strapi', 'Next.js'],
     content: {
-      intro: 'At Covrzy, I work on the core insurance infrastructure — building scalable backend systems that power multiple product lines.',
+      intro: 'At Covrzy, I work on the core insurance infrastructure - building scalable backend systems that power multiple product lines.',
       sections: [
         {
           title: 'Scaling Reservation Infrastructure',
@@ -393,11 +393,11 @@ const work = [
     slug: 'weknow',
     company: 'Weknow Technology',
     role: 'Software Developer Engineer → Intern',
-    duration: '2023 — 2024',
+    duration: '2023 - 2024',
     highlight: 'Engineered government survey portal serving 60,000+ users across Uttar Pradesh',
     techStack: ['JavaScript', 'React', 'PHP', 'MySQL', 'Node.js', 'TypeScript', 'jQuery'],
     content: {
-      intro: 'My first engineering role — started as an intern building school ERPs, grew into building government-scale systems serving tens of thousands of users.',
+      intro: 'My first engineering role - started as an intern building school ERPs, grew into building government-scale systems serving tens of thousands of users.',
       sections: [
         {
           title: 'College ERP & Payment Integration',
@@ -412,7 +412,7 @@ const work = [
           body: 'Developed UPRNSS Payroll System using Agile methodologies, optimizing salary management for 1,000+ employees using TypeScript, MySQL, Node.js, and React.',
         },
         {
-          title: 'Internship — Foundation Building',
+          title: 'Internship - Foundation Building',
           body: 'Designed a complete School ERP system covering dynamic content management, real-time data interaction, and admin control. Built and optimized a Hotel Billing System with itemized billing, tax calculations, and printable invoice generation.',
         },
       ],
@@ -478,7 +478,7 @@ const articles = [
   {
     slug: 'scaling-sitemap-millions-pages',
     title: 'Do You Really Know How to Scale sitemap.xml for Millions of Dynamic Pages?',
-    description: 'A scenario where your e-commerce site hits 10,000 products — and your sitemap strategy falls apart.',
+    description: 'A scenario where your e-commerce site hits 10,000 products - and your sitemap strategy falls apart.',
     tag: 'Scale',
     date: '2025-07-03',
     readingTime: '10 min',
@@ -488,7 +488,7 @@ const articles = [
   {
     slug: 'speeding-up-backend-database-indexing',
     title: 'Speeding Up Your Backend with Database Indexing',
-    description: 'That moment where your app starts to feel sluggish — and the fix is simpler than you think.',
+    description: 'That moment where your app starts to feel sluggish - and the fix is simpler than you think.',
     tag: 'Backend',
     date: '2025-05-10',
     readingTime: '7 min',
@@ -498,7 +498,7 @@ const articles = [
   {
     slug: 'what-happens-when-you-type-url',
     title: 'What Happens When You Type a URL in Your Browser?',
-    description: 'The journey from www.google.com to pixels on your screen — every step explained.',
+    description: 'The journey from www.google.com to pixels on your screen - every step explained.',
     tag: 'Fundamentals',
     date: '2025-06-16',
     readingTime: '12 min',
@@ -528,7 +528,7 @@ const articles = [
   {
     slug: 'html-best-practices-seo',
     title: 'HTML Best Practices: Structuring for SEO and Clarity',
-    description: 'Writing clean and semantic HTML isn\'t just aesthetics — it\'s how search engines understand your site.',
+    description: 'Writing clean and semantic HTML isn\'t just aesthetics - it\'s how search engines understand your site.',
     tag: 'Frontend',
     date: '2025-05-19',
     readingTime: '6 min',
@@ -558,7 +558,7 @@ const articles = [
   {
     slug: 'google-docs-dynamic-template-certificates',
     title: 'Have You Ever Tried Google Docs As a Dynamic Template For Generating Certificates, Invoices…',
-    description: 'A classic problem solved differently — using Google Docs API instead of PDF libraries.',
+    description: 'A classic problem solved differently - using Google Docs API instead of PDF libraries.',
     tag: 'Backend',
     date: '2025-06-22',
     readingTime: '8 min',
@@ -804,7 +804,7 @@ export default CaseStudy;
 
 Run: `cd "d:/Practice Web/Portfolio" && npm run dev`
 
-Open browser — should see "Landing" text with the new navbar. Navigate to `/writing`, `/work/covrzy` — each should render its placeholder.
+Open browser - should see "Landing" text with the new navbar. Navigate to `/writing`, `/work/covrzy` - each should render its placeholder.
 
 - [ ] **Step 10: Commit**
 
@@ -1131,7 +1131,7 @@ const Landing = () => {
             transition={{ delay: 0.3, duration: 0.5 }}
           >
             Software Engineer at Covrzy, building infrastructure that handles 400K+
-            reservations/month. I write about the craft of engineering — from scaling
+            reservations/month. I write about the craft of engineering - from scaling
             sitemaps to chasing ghost bugs.
           </motion.p>
           <motion.div
@@ -1161,7 +1161,7 @@ const Landing = () => {
             I think about why the feature exists,<br />
             then build it so it lasts."
           </blockquote>
-          <p className="philosophy__attr">— That's the thread through everything below.</p>
+          <p className="philosophy__attr">- That's the thread through everything below.</p>
         </ScrollReveal>
       </section>
 
@@ -1622,7 +1622,7 @@ export default Landing;
 
 Run: `npm run dev`
 
-Open browser at `/` — should see full landing scroll: Hero → Philosophy → Writing cards → Work list → Skills grid → Projects → Dark footer.
+Open browser at `/` - should see full landing scroll: Hero → Philosophy → Writing cards → Work list → Skills grid → Projects → Dark footer.
 
 - [ ] **Step 4: Commit**
 
@@ -1668,7 +1668,7 @@ const Writing = () => {
         <ScrollReveal>
           <h1 className="writing-page__title">Writing</h1>
           <p className="writing-page__sub">
-            Thinking about engineering problems — from scaling infrastructure to debugging CSS ghost bugs.
+            Thinking about engineering problems - from scaling infrastructure to debugging CSS ghost bugs.
           </p>
         </ScrollReveal>
 
@@ -1769,7 +1769,7 @@ export default Writing;
 
 - [ ] **Step 3: Verify `/writing` page works**
 
-Run dev server, navigate to `/writing`. Should see title, subtitle, filter pills, and article grid. Click filter pills — grid should filter.
+Run dev server, navigate to `/writing`. Should see title, subtitle, filter pills, and article grid. Click filter pills - grid should filter.
 
 - [ ] **Step 4: Commit**
 
@@ -1799,7 +1799,7 @@ Create 4 markdown files in `src/content/articles/`. Each should have a placehold
 
 Have you ever worked on frontend optimization and found the bug hiding in the last place you'd look?
 
-This article explores a real debugging story — a ghost bug that appeared when implementing React lazy loading, and how it turned out to be a CSS issue all along.
+This article explores a real debugging story - a ghost bug that appeared when implementing React lazy loading, and how it turned out to be a CSS issue all along.
 
 ---
 
@@ -1810,7 +1810,7 @@ Create similar placeholders for the other 3 articles.
 
 - [ ] **Step 2: Configure Vite to import markdown files as raw text**
 
-In `vite.config.js`, add the `assetsInclude` option or use raw import — Vite supports `?raw` suffix natively, so no config change needed. Articles will be imported as:
+In `vite.config.js`, add the `assetsInclude` option or use raw import - Vite supports `?raw` suffix natively, so no config change needed. Articles will be imported as:
 
 ```js
 import(`../content/articles/${slug}.md?raw`)
@@ -2312,14 +2312,14 @@ cd "d:/Practice Web/Portfolio" && npm run build
 
 Expected: Build succeeds with no errors.
 
-- [ ] **Step 4: Verify dev server — test all routes**
+- [ ] **Step 4: Verify dev server - test all routes**
 
 Run `npm run dev` and test:
-- `/` — Full landing scroll works
-- `/writing` — Article grid with filters
-- `/writing/chasing-ghost-bug-react-lazy-loading` — Article reader
-- `/work/covrzy` — Case study
-- `/work/weknow` — Case study
+- `/` - Full landing scroll works
+- `/writing` - Article grid with filters
+- `/writing/chasing-ghost-bug-react-lazy-loading` - Article reader
+- `/work/covrzy` - Case study
+- `/work/weknow` - Case study
 - Nav links work on all pages
 - Footer renders on all pages
 - Scroll-to-section links work on landing page
@@ -2363,7 +2363,7 @@ function ScrollToTop() {
 Update the `<title>` and meta descriptions to match the new positioning:
 
 ```html
-<title>Shubham Chaturvedi — Software Engineer & Writer</title>
+<title>Shubham Chaturvedi - Software Engineer & Writer</title>
 <meta name="description" content="I think deeply about the systems I build, then write about them. Software Engineer at Covrzy, building infrastructure at scale.">
 ```
 

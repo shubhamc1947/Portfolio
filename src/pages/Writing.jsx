@@ -23,7 +23,7 @@ const Writing = () => {
         <ScrollReveal>
           <h1 className="writing-page__title">Writing</h1>
           <p className="writing-page__sub">
-            Thinking about engineering problems — from scaling infrastructure to debugging CSS ghost bugs.
+            Thinking about engineering problems - from scaling infrastructure to debugging CSS ghost bugs.
           </p>
         </ScrollReveal>
 

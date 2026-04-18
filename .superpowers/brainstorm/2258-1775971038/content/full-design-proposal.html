@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio Revamp — Full Design Proposal</title>
+<title>Portfolio Revamp - Full Design Proposal</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -383,7 +383,7 @@
 <body>
 
 <div class="page-header">
-  <h1>Portfolio Revamp — Full Design Proposal</h1>
+  <h1>Portfolio Revamp - Full Design Proposal</h1>
   <p>Storyteller identity · Mind-first framing · Clean Modernist visual · Hybrid structure · Scroll through each section below.</p>
 </div>
 
@@ -391,7 +391,7 @@
 <div class="section">
   <div class="section-label">01 / Site Architecture</div>
   <h2>Pages & Routes</h2>
-  <p>Hybrid structure — cinematic landing scroll + dedicated subpages for depth.</p>
+  <p>Hybrid structure - cinematic landing scroll + dedicated subpages for depth.</p>
 
   <div class="sitemap">
     <div class="page-box primary">
@@ -402,22 +402,22 @@
     <div class="page-box">
       <h4>Writing</h4>
       <div class="route">/writing</div>
-      <p>All articles — Medium imports + original pieces. Filterable by tag. Each article gets its own page with full content.</p>
+      <p>All articles - Medium imports + original pieces. Filterable by tag. Each article gets its own page with full content.</p>
     </div>
     <div class="page-box">
       <h4>Case Study: Covrzy</h4>
       <div class="route">/work/covrzy</div>
-      <p>Full narrative — the problem, your approach, architecture decisions, impact. Real engineering storytelling.</p>
+      <p>Full narrative - the problem, your approach, architecture decisions, impact. Real engineering storytelling.</p>
     </div>
     <div class="page-box">
       <h4>Case Study: Weknow</h4>
       <div class="route">/work/weknow</div>
-      <p>Both roles combined into one story arc — intern to SDE. Government portals, ERPs, payment systems at scale.</p>
+      <p>Both roles combined into one story arc - intern to SDE. Government portals, ERPs, payment systems at scale.</p>
     </div>
     <div class="page-box">
       <h4>Article Page</h4>
       <div class="route">/writing/:slug</div>
-      <p>Individual article view — clean reading experience with typography optimized for long-form technical content.</p>
+      <p>Individual article view - clean reading experience with typography optimized for long-form technical content.</p>
     </div>
     <div class="page-box">
       <h4>About (optional)</h4>
@@ -429,10 +429,10 @@
   <div class="notes">
     <h4>Technical decisions I'm making:</h4>
     <ul>
-      <li><strong>React Router</strong> added for multi-page navigation (currently missing — your site is a single scroll)</li>
-      <li><strong>MDX or Markdown</strong> for blog articles — write once, render beautifully, no CMS overhead</li>
-      <li><strong>Keep Vite + React</strong> — no need to switch to Next.js. Vite is fast, you know it, and SSG isn't critical for a portfolio</li>
-      <li><strong>Framer Motion stays</strong> — but used intentionally for scroll-triggered reveals, not bouncy hover effects</li>
+      <li><strong>React Router</strong> added for multi-page navigation (currently missing - your site is a single scroll)</li>
+      <li><strong>MDX or Markdown</strong> for blog articles - write once, render beautifully, no CMS overhead</li>
+      <li><strong>Keep Vite + React</strong> - no need to switch to Next.js. Vite is fast, you know it, and SSG isn't critical for a portfolio</li>
+      <li><strong>Framer Motion stays</strong> - but used intentionally for scroll-triggered reveals, not bouncy hover effects</li>
       <li><strong>SCSS → keep it</strong>, but restructure with design tokens (CSS variables for spacing, typography scale, colors)</li>
     </ul>
   </div>
@@ -440,7 +440,7 @@
 
 <!-- SECTION 2: Hero -->
 <div class="section">
-  <div class="section-label">02 / Landing — Hero</div>
+  <div class="section-label">02 / Landing - Hero</div>
   <h2>First Impression</h2>
   <p>Bold statement, not a greeting. Your philosophy upfront, not your name.</p>
 
@@ -463,7 +463,7 @@
       </div>
       <div class="tagline">Software Engineer · Writer</div>
       <h1>I think deeply about<br>the systems I build.<span class="fade"><br>Then I write about them.</span></h1>
-      <div class="sub">Software Engineer at Covrzy, building infrastructure that handles 400K+ reservations/month. I write about the craft of engineering — from scaling sitemaps to chasing ghost bugs.</div>
+      <div class="sub">Software Engineer at Covrzy, building infrastructure that handles 400K+ reservations/month. I write about the craft of engineering - from scaling sitemaps to chasing ghost bugs.</div>
       <div class="btns">
         <button class="btn-primary">Read my writing →</button>
         <button class="btn-secondary">See my work →</button>
@@ -474,17 +474,17 @@
   <div class="notes">
     <h4>Design notes:</h4>
     <ul>
-      <li>The faded "Then I write about them" animates in on scroll — the reveal IS the storytelling</li>
-      <li>No hero image of yourself — the words are the hero. Your photo can live on the About page or as a small navbar element</li>
+      <li>The faded "Then I write about them" animates in on scroll - the reveal IS the storytelling</li>
+      <li>No hero image of yourself - the words are the hero. Your photo can live on the About page or as a small navbar element</li>
       <li>The 400K metric immediately establishes credibility before anyone scrolls</li>
-      <li>"npx shubhamc1947" moves to a subtle footer easter egg — not the main CTA</li>
+      <li>"npx shubhamc1947" moves to a subtle footer easter egg - not the main CTA</li>
     </ul>
   </div>
 </div>
 
 <!-- SECTION 3: Philosophy -->
 <div class="section">
-  <div class="section-label">03 / Landing — Philosophy Statement</div>
+  <div class="section-label">03 / Landing - Philosophy Statement</div>
   <h2>The Bridge Between Hero and Content</h2>
   <p>A short, punchy statement that frames everything that follows.</p>
 
@@ -493,18 +493,18 @@
       <div class="dot dot-r"></div>
       <div class="dot dot-y"></div>
       <div class="dot dot-g"></div>
-      <div class="mockup-url">shubham.dev — scrolled</div>
+      <div class="mockup-url">shubham.dev - scrolled</div>
     </div>
     <div class="philosophy-mock">
       <div class="quote">"Most engineers ship features.<br>I think about why the feature exists,<br>then build it so it lasts."</div>
-      <div class="attribution">— That's the thread through everything below.</div>
+      <div class="attribution">- That's the thread through everything below.</div>
     </div>
   </div>
 </div>
 
 <!-- SECTION 4: Featured Writing -->
 <div class="section">
-  <div class="section-label">04 / Landing — Featured Writing</div>
+  <div class="section-label">04 / Landing - Featured Writing</div>
   <h2>Your Best Thinking, Front and Center</h2>
   <p>4 hand-picked articles shown as cards. This is the "mind" showcase.</p>
 
@@ -513,7 +513,7 @@
       <div class="dot dot-r"></div>
       <div class="dot dot-y"></div>
       <div class="dot dot-g"></div>
-      <div class="mockup-url">shubham.dev — scrolled</div>
+      <div class="mockup-url">shubham.dev - scrolled</div>
     </div>
     <div class="writing-mock">
       <div class="section-head">
@@ -533,7 +533,7 @@
         <div class="article-card">
           <div class="tag">Scale</div>
           <h3>Do You Really Know How to Scale sitemap.xml for Millions of Pages?</h3>
-          <p>A scenario where your e-commerce site hits 10,000 products — and your sitemap strategy falls apart.</p>
+          <p>A scenario where your e-commerce site hits 10,000 products - and your sitemap strategy falls apart.</p>
           <div class="meta">
             <span>10 min read</span>
             <span>July 2025</span>
@@ -542,7 +542,7 @@
         <div class="article-card">
           <div class="tag">Backend</div>
           <h3>Speeding Up Your Backend with Database Indexing</h3>
-          <p>That moment where your app starts to feel sluggish — and the fix is simpler than you think.</p>
+          <p>That moment where your app starts to feel sluggish - and the fix is simpler than you think.</p>
           <div class="meta">
             <span>7 min read</span>
             <span>May 2025</span>
@@ -551,7 +551,7 @@
         <div class="article-card">
           <div class="tag">Fundamentals</div>
           <h3>What Happens When You Type a URL in Your Browser?</h3>
-          <p>The journey from www.google.com to pixels on your screen — every step explained.</p>
+          <p>The journey from www.google.com to pixels on your screen - every step explained.</p>
           <div class="meta">
             <span>12 min read</span>
             <span>June 2025</span>
@@ -564,7 +564,7 @@
   <div class="notes">
     <h4>Design notes:</h4>
     <ul>
-      <li>These 4 are your strongest — they show range (performance, scale, backend, fundamentals)</li>
+      <li>These 4 are your strongest - they show range (performance, scale, backend, fundamentals)</li>
       <li>Tags are categorized by engineering domain, not Medium tags</li>
       <li>"View all articles →" links to the full /writing page</li>
       <li>Cards link to individual article pages hosted on YOUR site (not Medium)</li>
@@ -574,7 +574,7 @@
 
 <!-- SECTION 5: Work -->
 <div class="section">
-  <div class="section-label">05 / Landing — Work</div>
+  <div class="section-label">05 / Landing - Work</div>
   <h2>Work as Clickable Case Studies</h2>
   <p>Clean list with one standout metric each. Click to go deep.</p>
 
@@ -583,7 +583,7 @@
       <div class="dot dot-r"></div>
       <div class="dot dot-y"></div>
       <div class="dot dot-g"></div>
-      <div class="mockup-url">shubham.dev — scrolled</div>
+      <div class="mockup-url">shubham.dev - scrolled</div>
     </div>
     <div class="work-mock">
       <div class="section-head" style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:16px;">
@@ -596,7 +596,7 @@
           <div class="highlight">Built AWS infra handling 400K+ reservations/month with &lt;200ms response time</div>
         </div>
         <div class="right">
-          <div class="duration">2024 — Present</div>
+          <div class="duration">2024 - Present</div>
           <div class="arrow">→</div>
         </div>
       </div>
@@ -607,7 +607,7 @@
           <div class="highlight">Engineered government survey portal serving 60,000+ users across Uttar Pradesh</div>
         </div>
         <div class="right">
-          <div class="duration">2023 — 2024</div>
+          <div class="duration">2023 - 2024</div>
           <div class="arrow">→</div>
         </div>
       </div>
@@ -617,16 +617,16 @@
 
 <!-- SECTION 6: Skills -->
 <div class="section">
-  <div class="section-label">06 / Landing — Skills</div>
+  <div class="section-label">06 / Landing - Skills</div>
   <h2>Skills as Grouped Capabilities</h2>
-  <p>Not a flat grid of 26 icons — organized by what you actually DO.</p>
+  <p>Not a flat grid of 26 icons - organized by what you actually DO.</p>
 
   <div class="mockup-frame">
     <div class="mockup-browser-bar">
       <div class="dot dot-r"></div>
       <div class="dot dot-y"></div>
       <div class="dot dot-g"></div>
-      <div class="mockup-url">shubham.dev — scrolled</div>
+      <div class="mockup-url">shubham.dev - scrolled</div>
     </div>
     <div class="skills-mock">
       <h2 style="font-size:36px;font-weight:700;letter-spacing:-1px;margin-bottom:32px;">Tools & Technologies</h2>
@@ -694,16 +694,16 @@
 
 <!-- SECTION 7: Contact -->
 <div class="section">
-  <div class="section-label">07 / Landing — Contact</div>
+  <div class="section-label">07 / Landing - Contact</div>
   <h2>Contact as a Statement</h2>
-  <p>Dark footer block. Bold, inviting, no form — just a direct email link and socials.</p>
+  <p>Dark footer block. Bold, inviting, no form - just a direct email link and socials.</p>
 
   <div class="mockup-frame">
     <div class="mockup-browser-bar">
       <div class="dot dot-r"></div>
       <div class="dot dot-y"></div>
       <div class="dot dot-g"></div>
-      <div class="mockup-url">shubham.dev — scrolled</div>
+      <div class="mockup-url">shubham.dev - scrolled</div>
     </div>
     <div class="contact-mock">
       <h2>Let's build something.</h2>
@@ -721,7 +721,7 @@
   <div class="notes">
     <h4>Design notes:</h4>
     <ul>
-      <li>No contact form — email link is more professional and personal. Forms feel generic.</li>
+      <li>No contact form - email link is more professional and personal. Forms feel generic.</li>
       <li>Dark section creates visual contrast and signals "end of page"</li>
       <li>The "npx shubhamc1947" lives here as a small monospace easter egg below socials</li>
     </ul>
