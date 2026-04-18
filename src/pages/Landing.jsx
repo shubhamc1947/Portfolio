@@ -97,7 +97,7 @@ const Landing = () => {
           <div className="writing-preview__grid">
             {featured.map((article, i) => (
               <ScrollReveal key={article.slug} delay={i * 0.1}>
-                <ArticleCard article={article} />
+                <ArticleCard article={article} index={i} />
               </ScrollReveal>
             ))}
           </div>
@@ -110,21 +110,43 @@ const Landing = () => {
           <ScrollReveal>
             <h2 className="work-preview__heading">Work</h2>
           </ScrollReveal>
-          {work.map((job, i) => (
-            <ScrollReveal key={job.slug} delay={i * 0.1}>
-              <Link to={`/work/${job.slug}`} className="work-card">
-                <div className="work-card__left">
-                  <h3>{job.company}</h3>
-                  <span className="work-card__role">{job.role}</span>
+          <div className="work-preview__grid">
+            {work.map((job, i) => (
+              <ScrollReveal key={job.slug} delay={i * 0.15}>
+                <Link to={`/work/${job.slug}`} className="work-card">
+                  <div className="work-card__header">
+                    <div>
+                      <h3 className="work-card__company">{job.company}</h3>
+                      <span className="work-card__role">{job.role}</span>
+                    </div>
+                    <span className="work-card__duration">{job.duration}</span>
+                  </div>
                   <p className="work-card__highlight">{job.highlight}</p>
-                </div>
-                <div className="work-card__right">
-                  <span className="work-card__duration">{job.duration}</span>
-                  <span className="work-card__arrow">→</span>
-                </div>
-              </Link>
-            </ScrollReveal>
-          ))}
+                  {job.content.metrics && (
+                    <div className="work-card__metrics">
+                      {job.content.metrics.map((m) => (
+                        <div key={m.label} className="work-card__metric">
+                          <span className="work-card__metric-value">{m.value}</span>
+                          <span className="work-card__metric-label">{m.label}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  <div className="work-card__footer">
+                    <div className="work-card__techs">
+                      {job.techStack.slice(0, 4).map((t) => (
+                        <span key={t} className="work-card__tech">{t}</span>
+                      ))}
+                      {job.techStack.length > 4 && (
+                        <span className="work-card__tech">+{job.techStack.length - 4}</span>
+                      )}
+                    </div>
+                    <span className="work-card__cta">Read case study →</span>
+                  </div>
+                </Link>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -132,7 +154,7 @@ const Landing = () => {
       <section className="skills-section">
         <div className="skills-section__inner">
           <ScrollReveal>
-            <h2 className="skills-section__heading">Tools & Technologies</h2>
+            <h2 className="skills-section__heading">Tools &amp; Technologies</h2>
           </ScrollReveal>
           <div className="skills-grid">
             {skills.map((group, i) => (

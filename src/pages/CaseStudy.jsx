@@ -37,6 +37,19 @@ const CaseStudy = () => {
           <p className="case-study__intro">{job.content.intro}</p>
         </ScrollReveal>
 
+        {job.content.metrics && (
+          <ScrollReveal>
+            <div className="case-study__metrics">
+              {job.content.metrics.map((m) => (
+                <div key={m.label} className="case-study__metric">
+                  <span className="case-study__metric-value">{m.value}</span>
+                  <span className="case-study__metric-label">{m.label}</span>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
+        )}
+
         <div className="case-study__sections">
           {job.content.sections.map((section, i) => (
             <ScrollReveal key={i} delay={i * 0.1}>

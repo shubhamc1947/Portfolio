@@ -24,9 +24,12 @@ const work = [
           body: 'Developed scalable web applications using Node.js, TypeScript, and React. Implemented Strapi CMS for blog automation at covrzy.com/blog.',
         },
       ],
+      metrics: [
+        { value: '400K+', label: 'Reservations/mo' },
+        { value: '<200ms', label: 'Response time' },
+        { value: '99.9%', label: 'Uptime' },
+      ],
       products: [
-        { name: 'Health', url: 'https://health.covrzy.com' },
-        { name: 'Liability', url: 'https://start.covrzy.com' },
         { name: 'Blog', url: 'https://covrzy.com/blog' },
       ],
     },
@@ -57,6 +60,11 @@ const work = [
           title: 'Internship — Foundation Building',
           body: 'Designed a complete School ERP system covering dynamic content management, real-time data interaction, and admin control. Built and optimized a Hotel Billing System with itemized billing, tax calculations, and printable invoice generation.',
         },
+      ],
+      metrics: [
+        { value: '60K+', label: 'Users served' },
+        { value: '1,000+', label: 'Employees managed' },
+        { value: '5→1 day', label: 'Process time cut' },
       ],
       products: [
         { name: 'KNIPSS', url: 'https://knipssexams.in/' },

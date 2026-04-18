@@ -52,8 +52,46 @@
     font-size: var(--text-xl);
     color: var(--color-text-secondary);
     line-height: 1.6;
-    margin-bottom: var(--space-16);
+    margin-bottom: var(--space-10);
     max-width: 600px;
+  }
+
+  &__metrics {
+    display: flex;
+    gap: var(--space-10);
+    padding: var(--space-8) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--space-16);
+
+    @media (max-width: 576px) {
+      flex-direction: column;
+      gap: var(--space-6);
+    }
+  }
+
+  &__metric {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__metric-value {
+    font-size: var(--text-4xl);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: var(--space-1);
+
+    @media (max-width: 768px) {
+      font-size: var(--text-2xl);
+    }
+  }
+
+  &__metric-label {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-text-muted);
   }
 
   &__sections {
@@ -121,13 +159,17 @@
   }
 }
 
-// Duplicated from Landing.scss — needed when case study page is visited directly
-// without Landing.scss being loaded
 .skill-pill {
-  background: var(--color-surface);
-  border: 1px solid var(--color-border);
-  padding: var(--space-1) var(--space-4);
-  border-radius: var(--radius-pill);
-  font-size: var(--text-sm);
+  font-size: 13px;
   color: var(--color-text-secondary);
+  line-height: 1.4;
+
+  &::after {
+    content: ',';
+    color: var(--color-text-muted);
+  }
+
+  &:last-child::after {
+    content: '';
+  }
 }
