@@ -1,0 +1,61 @@
+@mixin shell {
+  max-width: var(--shell);
+  margin: 0 auto;
+  padding: 0 40px;
+
+  @media (max-width: 680px) {
+    padding: 0 20px;
+  }
+}
+
+@mixin section-block {
+  padding: clamp(64px, 9vw, 96px) 0;
+  position: relative;
+  z-index: 2;
+}
+
+@mixin section-tight {
+  padding: clamp(48px, 7vw, 72px) 0;
+  position: relative;
+  z-index: 2;
+}
+
+@mixin sec-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-4);
+}
+
+@mixin sec-title {
+  font-family: var(--sans);
+  font-size: clamp(26px, 3.4vw, 34px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-top: 4px;
+  color: var(--ink);
+}
+
+// Aliases used by subpages
+@mixin container { @include shell; }
+
+@mixin reading-width {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+@mixin section-padding { @include section-block; }
+
+@mixin label { @include sec-label; }
+
+@mixin heading-xl {
+  font-family: var(--sans);
+  font-size: clamp(44px, 7vw, 80px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  color: var(--ink);
+}
+
+@mixin heading-lg { @include sec-title; }

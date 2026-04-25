@@ -1,0 +1,31 @@
+:root {
+  // Colors - warm sand palette
+  --bg: #f6f5f1;
+  --bg-2: #ecebe5;
+  --surface: #ffffff;
+  --ink: #121212;
+  --ink-2: #2a2a2a;
+  --ink-3: #5a5a57;
+  --ink-4: #8a8a86;
+  --ink-5: #c8c7c1;
+  --line: #e3e1d9;
+  --line-2: #d3d1c8;
+  --accent: #d9402a;
+  --accent-quiet: #b5351f;
+
+  // Dark slab colors
+  --night: #0f0f0f;
+  --night-2: #1a1a1a;
+  --night-line: #262626;
+  --night-ink-2: #b4b4b0;
+  --night-ink-3: #7a7a75;
+
+  // Typography
+  --serif: 'Fraunces', 'Times New Roman', serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  // Layout
+  --shell: 1120px;
+  --nav-h: 60px;
+}
