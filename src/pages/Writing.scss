@@ -1,0 +1,124 @@
+@use '../styles/mixins';
+
+.writing-page {
+  padding-top: calc(var(--nav-h) + clamp(32px, 6vw, 64px));
+
+  &__inner {
+    @include mixins.shell;
+    padding-bottom: clamp(64px, 9vw, 96px);
+  }
+
+  &__title {
+    @include mixins.heading-xl;
+    font-size: clamp(34px, 8vw, 80px);
+    margin-bottom: clamp(12px, 3vw, 16px);
+  }
+
+  &__sub {
+    font-size: clamp(14px, 3.4vw, 16px);
+    color: var(--ink-3);
+    max-width: 520px;
+    margin-bottom: clamp(28px, 5vw, 40px);
+
+    em {
+      font-family: var(--serif);
+      font-style: italic;
+      color: var(--ink-2);
+    }
+
+    a {
+      color: var(--ink-2);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1px;
+      transition: color 0.15s, border-color 0.15s;
+
+      &:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(12px, 3vw, 16px);
+
+    @media (max-width: 760px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__cell {
+    display: flex;
+
+    > * { flex: 1; }
+  }
+}
+
+.archive-card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(18px, 4.5vw, 28px);
+  border: 1px dashed var(--ink-5);
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s, background 0.2s;
+
+  &:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    background: var(--surface);
+  }
+
+  &__label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-4);
+  }
+
+  &__title {
+    font-family: var(--sans);
+    font-size: clamp(16px, 4.2vw, 19px);
+    font-weight: 600;
+    line-height: 1.28;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+
+  &__desc {
+    font-size: clamp(13px, 3.4vw, 13.5px);
+    color: var(--ink-3);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  &__cta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 8px;
+    border-top: 1px dashed var(--line);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  &__arr {
+    transition: transform 0.2s;
+  }
+
+  &:hover &__arr {
+    transform: translate(2px, -2px);
+  }
+}
+
