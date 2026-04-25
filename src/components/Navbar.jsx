@@ -37,14 +37,14 @@ const Navbar = ({ onOpenCmd }) => {
     <>
       <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
         <div className="nav__shell">
-          <Link to="/" className="logo">
-            <span className="logo__glyph">s</span>
-            <span className="logo__dot" />
-            <span className="logo__glyph">c</span>
+          <Link to="/" className="logo" aria-label="Shubham Chaturvedi - home">
+            <span className="logo__name">shubham</span>
+            <span className="logo__cursor" aria-hidden="true">_</span>
           </Link>
           <div className="nav__links">
-            <Link to="/writing" className="nav__link-desktop">Writing</Link>
             <a href="/#work" className="nav__link-desktop" onClick={(e) => handleSectionClick(e, 'work')}>Work</a>
+            <a href="/#projects" className="nav__link-desktop" onClick={(e) => handleSectionClick(e, 'projects')}>Projects</a>
+            <Link to="/writing" className="nav__link-desktop">Writing</Link>
             <a href="/#contact" className="nav__link-desktop" onClick={(e) => handleSectionClick(e, 'contact')}>Contact</a>
             {onOpenCmd && (
               <button className="nav__cmd" onClick={onOpenCmd} title="Command palette">
@@ -61,8 +61,9 @@ const Navbar = ({ onOpenCmd }) => {
       {menuOpen && (
         <div className="mobile-menu" onClick={() => setMenuOpen(false)}>
           <div className="mobile-menu__inner" onClick={e => e.stopPropagation()}>
-            <Link to="/writing" onClick={() => setMenuOpen(false)}>Writing</Link>
             <a href="/#work" onClick={(e) => handleSectionClick(e, 'work')}>Work</a>
+            <a href="/#projects" onClick={(e) => handleSectionClick(e, 'projects')}>Projects</a>
+            <Link to="/writing" onClick={() => setMenuOpen(false)}>Writing</Link>
             <a href="/#contact" onClick={(e) => handleSectionClick(e, 'contact')}>Contact</a>
             {onOpenCmd && (
               <button onClick={() => { setMenuOpen(false); onOpenCmd(); }}>Search ⌘K</button>

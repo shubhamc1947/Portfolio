@@ -11,7 +11,7 @@ const skills = [
   },
   {
     category: 'Backend',
-    items: ['Node.js', 'Express', 'REST APIs', 'WebSocket'],
+    items: ['Node.js', 'Express', 'REST APIs', 'WebSocket', 'Firebase'],
   },
   {
     category: 'Databases',
@@ -19,11 +19,11 @@ const skills = [
   },
   {
     category: 'Cloud & DevOps',
-    items: ['AWS', 'Docker', 'EC2 / ECS / EKS', 'S3', 'CloudFront'],
+    items: ['AWS (EC2, S3, RDS, ALB, API Gateway)', 'Docker', 'CloudFront', 'CloudWatch', 'GitHub Actions'],
   },
   {
-    category: 'Workflow',
-    items: ['Git', 'Jira', 'Bash', 'Firebase'],
+    category: 'Testing & Tooling',
+    items: ['Jest', 'Vitest', 'Git', 'Bash', 'Benchmarking'],
   },
 ];
 

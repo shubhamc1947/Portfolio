@@ -1,5 +1,6 @@
 const work = [
-  {
+  // Temporarily hidden - re-enable when ready
+  /* {
     slug: 'shifu',
     company: 'Shifu Ventures',
     role: 'Product Engineer',
@@ -22,16 +23,20 @@ const work = [
           title: 'Close to the founders',
           body: 'Working directly with the founders, co-founders, and software veterans who run the studio. The feedback loop is short, the context is dense, and the learning compounds fast.',
         },
+        {
+          title: "What I'm learning",
+          body: 'The product side of engineering. Building MVPs that scale, deciding what to ship vs defer, designing flow from sketch to production. Working close to the founders, the feedback loop is short and the learning compounds.',
+        },
       ],
       products: [],
     },
-  },
+  }, */
   {
     slug: 'covrzy',
     company: 'Covrzy',
     role: 'Software Developer Engineer',
     year: '2024 - 2026',
-    highlight: 'Built AWS infra handling 600K+ bookings/month at sub-200ms p95 - drove 966K+ impressions and 12.6K+ clicks in 5 months.',
+    highlight: 'Built AWS infra handling 600K+ bookings/month at sub-200ms p95 - shipped Health and Liability product lines end-to-end.',
     techStack: ['Go', 'TypeScript', 'Node.js', 'React', 'Next.js', 'PostgreSQL', 'AWS'],
     metrics: [
       { value: '600K+', label: 'monthly bookings' },
@@ -43,26 +48,28 @@ const work = [
       sections: [
         {
           title: 'Scaling Reservation Infrastructure',
-          body: 'Architected and optimized AWS infra (EC2, S3, RDS, API Gateway, ALB, CloudWatch) for Travel APIs - 600K+ monthly bookings, 99.9% uptime, <200ms averages.',
+          body: 'Architected and optimized AWS infra (EC2, S3, RDS, API Gateway, ALB, CloudWatch) for Travel APIs - 600K+ monthly bookings, 99.9% uptime, sub-200ms p95 latency.',
         },
         {
-          title: 'Product Reach',
-          body: 'Shipped web apps in Node/TS/React for Health and Liability that drove 966K+ impressions and 12.6K+ clicks within 5 months of launch.',
+          title: 'Shipping New Product Lines',
+          body: 'Shipped Health and Liability web apps from zero in Node/TS/React - full-stack from API design and schema through to the public landing pages, delivered within 5 months of project kick-off.',
         },
         {
           title: 'Ops Velocity',
           body: 'Cut client response time from 24h to 1h by integrating Slack Webhooks across every product for zero-delay request routing. Added MSG91 + Heltar WhatsApp to the stack.',
         },
+        {
+          title: 'What I learned',
+          body: 'Where I learned to operate at scale. AWS infrastructure, CI/CD pipelines, deployment discipline, and the rigor of holding sub-200ms p95 under real request volume.',
+        },
       ],
-      products: [
-        { name: 'Blog', url: 'https://covrzy.com/blog' },
-      ],
+      products: [],
     },
   },
   {
     slug: 'weknow',
     company: 'Weknow Technology',
-    role: 'SDE → Intern',
+    role: 'Intern → SDE',
     year: '2023 - 24',
     highlight: 'Engineered a government survey portal serving 60,000+ users across Uttar Pradesh.',
     techStack: ['JavaScript', 'React', 'PHP', 'MySQL', 'Node.js', 'TypeScript'],
@@ -85,6 +92,10 @@ const work = [
         {
           title: 'Payroll System (HRMS)',
           body: 'Built UPRNSS Payroll for 1,000+ employees using TypeScript, MySQL, Node.js, and React.',
+        },
+        {
+          title: 'What I learned',
+          body: 'First engineering role - where I learned what production code actually looks like. SDLC discipline, role-based access control, schema design that survives change. Real users, not class projects.',
         },
       ],
       products: [

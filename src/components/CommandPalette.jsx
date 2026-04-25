@@ -30,13 +30,22 @@ const CommandPalette = ({ open, onClose }) => {
       { group: 'navigate', icon: '§', title: 'Contact', hint: 'g c', action: () => goToSection('contact') },
     ];
     const actions = [
-      { group: 'actions', icon: '↓', title: 'Copy email address', hint: 'shubhamchat224122@gmail.com', action: () => { navigator.clipboard?.writeText('shubhamchat224122@gmail.com'); } },
-      { group: 'actions', icon: '✉', title: 'Send email', hint: '', action: () => { window.location.href = 'mailto:shubhamchat224122@gmail.com'; } },
+      { group: 'actions', icon: '↓', title: 'Copy email address', hint: 'shubhamchat03@gmail.com', action: () => { navigator.clipboard?.writeText('shubhamchat03@gmail.com'); } },
+      { group: 'actions', icon: '✉', title: 'Send email', hint: '', action: () => { window.location.href = 'mailto:shubhamchat03@gmail.com'; } },
     ];
-    const articleCmds = articles.filter(a => a.source === 'embedded').map(a => ({
-      group: 'writing', icon: '¶', title: a.title, hint: a.readingTime,
-      action: () => navigate(`/writing/${a.slug}`),
-    }));
+    const articleCmds = articles.map(a => {
+      const url = a.externalUrl || a.mediumUrl;
+      return {
+        group: 'writing', icon: '¶', title: a.title, hint: `${a.readingTime} read`,
+        action: () => {
+          if (a.source === 'embedded') {
+            navigate(`/writing/${a.slug}`);
+          } else if (url) {
+            window.open(url, '_blank', 'noopener,noreferrer');
+          }
+        },
+      };
+    });
     const socialCmds = social.map(s => ({
       group: 'elsewhere', icon: '↗', title: s.name, hint: s.url.replace(/^https?:\/\//, ''),
       action: () => window.open(s.url, '_blank'),

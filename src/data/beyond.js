@@ -12,10 +12,10 @@ const beyond = [
     desc: "Consistent practice on LeetCode & CodeChef. Not a badge for its own sake - it's the reason production code under pressure doesn't rattle me.",
   },
   {
-    value: '20',
-    unit: '+',
-    label: 'essays published',
-    desc: 'On Medium - system design, React optimization, AWS deployment, backend debugging. I write because it forces me to understand.',
+    value: '10',
+    unit: '',
+    label: 'articles published',
+    desc: 'On Medium - system design, React optimization, debugging, and scale. Two featured in the Dev Simplified publication. I write because it forces me to understand.',
   },
   {
     value: '♠',

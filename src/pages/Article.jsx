@@ -16,11 +16,16 @@ const Article = () => {
   const meta = articles.find((a) => a.slug === slug);
 
   useEffect(() => {
+    const externalUrl = meta?.externalUrl || meta?.mediumUrl;
+    if (meta && meta.source !== 'embedded' && externalUrl) {
+      window.location.replace(externalUrl);
+      return;
+    }
     const path = `../content/articles/${slug}.md`;
     if (articleModules[path]) {
       articleModules[path]().then(setContent);
     }
-  }, [slug]);
+  }, [slug, meta]);
 
   if (!meta) {
     return (
@@ -28,6 +33,19 @@ const Article = () => {
         <div className="article-page__inner">
           <h1>Article not found</h1>
           <Link to="/writing">← Back to writing</Link>
+        </div>
+      </main>
+    );
+  }
+
+  if (meta.source !== 'embedded') {
+    const dest = meta.platform || (meta.source === 'linkedin' ? 'LinkedIn' : 'Medium');
+    return (
+      <main className="article-page">
+        <div className="article-page__inner">
+          <p style={{ color: 'var(--ink-3)', fontFamily: 'var(--mono)', fontSize: 13 }}>
+            Redirecting to {dest}…
+          </p>
         </div>
       </main>
     );
@@ -41,7 +59,7 @@ const Article = () => {
           <span className="article-page__tag">{meta.tag}</span>
           <h1 className="article-page__title">{meta.title}</h1>
           <div className="article-page__meta">
-            <span>{meta.readingTime}</span>
+            <span>{meta.readingTime} read</span>
             <span>·</span>
             <span>{new Date(meta.date).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</span>
           </div>

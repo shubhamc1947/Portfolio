@@ -11,10 +11,10 @@ import beyond from '../data/beyond';
 import './Landing.scss';
 
 const featuredSlugs = [
-  'chasing-ghost-bug-react-lazy-loading',
+  'distributed-ledger-isolation-decimal-precision',
   'scaling-sitemap-millions-pages',
-  'speeding-up-backend-database-indexing',
-  'what-happens-when-you-type-url',
+  'google-docs-dynamic-template-certificates',
+  'chasing-ghost-bug-react-lazy-loading',
 ];
 
 const PRIMARY_SKILLS = new Set(['TypeScript', 'Go', 'React', 'Node.js', 'PostgreSQL', 'AWS']);
@@ -66,14 +66,19 @@ const Landing = () => {
             <span className="hero__faded">Then I write about them.</span>
           </motion.h1>
           <motion.p className="hero__sub" variants={v}>
-            <b>Product engineer</b> at Shifu Ventures - building internal tools and zero-to-one products across a venture studio + its portfolio. Previously scaled insurance infra at Covrzy to <b>600K+ bookings/month</b>. I write about the craft along the way.
+            <b>Software engineer at Covrzy.</b> Building the AWS infrastructure and product surfaces behind <b>600K+ insurance bookings/month</b> at sub-200ms p95 - Health and Liability product lines shipped end-to-end.
           </motion.p>
           <motion.div className="hero__ctas" variants={v}>
-            <a href="#writing" className="btn btn--primary" onClick={(e) => { e.preventDefault(); scrollToId('writing'); }}>
+            <a href="#work" className="btn btn--primary" onClick={(e) => { e.preventDefault(); scrollToId('work'); }}>
+              See my work <span className="btn__arr">→</span>
+            </a>
+            <a href="#writing" className="btn btn--secondary" onClick={(e) => { e.preventDefault(); scrollToId('writing'); }}>
               Read my writing <span className="btn__arr">→</span>
             </a>
-            <a href="#work" className="btn btn--secondary" onClick={(e) => { e.preventDefault(); scrollToId('work'); }}>
-              See my work <span className="btn__arr">→</span>
+          </motion.div>
+          <motion.div className="hero__cv" variants={v}>
+            <a href="/shubham-chaturvedi-cv.pdf" target="_blank" rel="noreferrer">
+              Download CV (PDF) <span className="hero__cv-arr">↗</span>
             </a>
           </motion.div>
         </motion.div>
@@ -86,21 +91,19 @@ const Landing = () => {
             <div className="ticker__group" key={dup}>
               <span className="ticker__item">600K+ bookings / month</span>
               <span className="ticker__dot">●</span>
-              <span className="ticker__item">966K+ impressions</span>
-              <span className="ticker__dot">●</span>
-              <span className="ticker__item">12.6K+ clicks</span>
+              <span className="ticker__item">Sub-200ms p95</span>
               <span className="ticker__dot">●</span>
               <span className="ticker__item">99.9% uptime</span>
               <span className="ticker__dot">●</span>
-              <span className="ticker__item">Sub-200ms p95</span>
-              <span className="ticker__dot">●</span>
               <span className="ticker__item">60K+ gov users served</span>
               <span className="ticker__dot">●</span>
-              <span className="ticker__item">600+ DSA problems</span>
+              <span className="ticker__item">4,300+ JSON tx/s · SafeMap bench</span>
               <span className="ticker__dot">●</span>
-              <span className="ticker__item">20+ essays published</span>
+              <span className="ticker__item">3 product lines shipped</span>
               <span className="ticker__dot">●</span>
-              <span className="ticker__item">250+ students mentored</span>
+              <span className="ticker__item">10 articles · Dev Simplified</span>
+              <span className="ticker__dot">●</span>
+              <span className="ticker__item">250+ engineers mentored</span>
               <span className="ticker__dot">●</span>
             </div>
           ))}
@@ -112,9 +115,9 @@ const Landing = () => {
         <Reveal y={8}>
           <div className="philo__mark">&ldquo;</div>
           <p className="philo__quote">
-            Most engineers ship features.<span className="philo__break"><br /></span>
-            I think about <span className="philo__accent">why</span> the feature exists,<span className="philo__break"><br /></span>
-            then build it so it lasts.
+            Every system I ship, I break first.<span className="philo__break"><br /></span>
+            Every bug I fix, I <span className="philo__accent">write about</span>.<span className="philo__break"><br /></span>
+            The loop is how I get better.
           </p>
           <div className="philo__attr">- the thread through everything below</div>
         </Reveal>
@@ -127,7 +130,7 @@ const Landing = () => {
             <div className="sec-head">
               <div>
                 <div className="sec-label">§ 01 · Writing</div>
-                <h2 className="sec-title">Essays on the <em>craft</em>.</h2>
+                <h2 className="sec-title">Articles on the <em>craft</em>.</h2>
               </div>
               <Link className="sec-link" to="/writing">
                 View all writing <span className="sec-link__arr">→</span>
@@ -151,7 +154,7 @@ const Landing = () => {
                 <div className="sec-label" style={{ color: 'var(--night-ink-3)' }}>§ 02 · Work</div>
                 <h2 className="sec-title" style={{ color: '#fff' }}>Where I&apos;ve <em>shipped</em>.</h2>
               </div>
-              <Link className="sec-link" to="/work/shifu" style={{ color: 'var(--night-ink-2)', borderColor: 'var(--night-line)' }}>
+              <Link className="sec-link" to="/work/covrzy" style={{ color: 'var(--night-ink-2)', borderColor: 'var(--night-line)' }}>
                 View all work <span className="sec-link__arr">→</span>
               </Link>
             </div>
@@ -239,7 +242,7 @@ const Landing = () => {
                   <div className="proj-row__stack">{p.techStack.join(' · ')}</div>
                   <div className="proj-row__links">
                     <a href={p.github} target="_blank" rel="noreferrer">Source ↗</a>
-                    <a href={p.live} target="_blank" rel="noreferrer">Live ↗</a>
+                    {p.live && <a href={p.live} target="_blank" rel="noreferrer">Live ↗</a>}
                   </div>
                 </div>
               ))}

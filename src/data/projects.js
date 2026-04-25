@@ -2,6 +2,12 @@
 
 const projects = [
   {
+    name: 'SafeMap',
+    description: 'Thread-safe in-memory key-value store with 64-bucket sharded locking, benchmarked at 4,300+ JSON tx/s.',
+    techStack: ['Go', 'Concurrency', 'REST API', 'Benchmarking'],
+    github: 'https://github.com/shubhamc1947/safemap',
+  },
+  {
     name: 'CollabCode',
     description: 'Real-time collaborative code editor with WebSocket integration and adaptable tab management.',
     techStack: ['MongoDB', 'React', 'Node.js', 'Socket.io', 'Framer Motion'],
@@ -14,13 +20,6 @@ const projects = [
     techStack: ['MongoDB', 'Express', 'React', 'Node.js'],
     github: 'https://github.com/shubhamc1947/OpenPen',
     live: 'https://openpen.vercel.app/',
-  },
-  {
-    name: 'ShopHere',
-    description: 'Responsive e-commerce site with advanced search, filtering, and secure payment gateway.',
-    techStack: ['Bootstrap', 'React', 'RazorPay'],
-    github: 'https://github.com/shubhamc1947/shophere',
-    live: 'https://shophere8.netlify.app/',
   },
 ];
 
