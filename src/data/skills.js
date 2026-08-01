@@ -14,6 +14,10 @@ const skills = [
     items: ['Node.js', 'Express', 'REST APIs', 'WebSocket', 'Firebase'],
   },
   {
+    category: 'AI / LLM',
+    items: ['MCP servers', 'Claude Code', 'Codex', 'LLM integration'],
+  },
+  {
     category: 'Databases',
     items: ['PostgreSQL', 'MySQL', 'MongoDB', 'DynamoDB'],
   },

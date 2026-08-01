@@ -30,8 +30,8 @@ const CommandPalette = ({ open, onClose }) => {
       { group: 'navigate', icon: '§', title: 'Contact', hint: 'g c', action: () => goToSection('contact') },
     ];
     const actions = [
-      { group: 'actions', icon: '↓', title: 'Copy email address', hint: 'shubhamchat03@gmail.com', action: () => { navigator.clipboard?.writeText('shubhamchat03@gmail.com'); } },
-      { group: 'actions', icon: '✉', title: 'Send email', hint: '', action: () => { window.location.href = 'mailto:shubhamchat03@gmail.com'; } },
+      { group: 'actions', icon: '↓', title: 'Copy email address', hint: 'shubhamchat20@gmail.com', action: () => { navigator.clipboard?.writeText('shubhamchat20@gmail.com'); } },
+      { group: 'actions', icon: '✉', title: 'Send email', hint: '', action: () => { window.location.href = 'mailto:shubhamchat20@gmail.com'; } },
     ];
     const articleCmds = articles.map(a => {
       const url = a.externalUrl || a.mediumUrl;

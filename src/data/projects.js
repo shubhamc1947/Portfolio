@@ -9,14 +9,14 @@ const projects = [
   },
   {
     name: 'CollabCode',
-    description: 'Real-time collaborative code editor with WebSocket integration and adaptable tab management.',
+    description: 'Real-time collaborative code editor: live multi-user editing over Socket.IO, with multi-language support.',
     techStack: ['MongoDB', 'React', 'Node.js', 'Socket.io', 'Framer Motion'],
-    github: 'https://github.com/shubhamc1947/realtime-code-editor-MERN',
+    github: 'https://github.com/shubhamc1947/Colla8-Code',
     live: 'https://colla8code.vercel.app/',
   },
   {
     name: 'OpenPen',
-    description: 'MERN stack blogging platform with secure JWT-based authentication and UI/UX enhancements.',
+    description: 'MERN stack blogging platform with secure JWT-based authentication.',
     techStack: ['MongoDB', 'Express', 'React', 'Node.js'],
     github: 'https://github.com/shubhamc1947/OpenPen',
     live: 'https://openpen.vercel.app/',

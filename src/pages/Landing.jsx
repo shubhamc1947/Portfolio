@@ -66,7 +66,7 @@ const Landing = () => {
             <span className="hero__faded">Then I write about them.</span>
           </motion.h1>
           <motion.p className="hero__sub" variants={v}>
-            <b>Software engineer at Covrzy.</b> Building the AWS infrastructure and product surfaces behind <b>600K+ insurance bookings/month</b> at sub-200ms p95 - Health and Liability product lines shipped end-to-end.
+            <b>Software engineer at Covrzy.</b> Building the AWS infrastructure and product surfaces behind <b>600K+ travel-insurance bookings/month</b> at sub-200ms p95 - Health and Liability product lines shipped end-to-end.
           </motion.p>
           <motion.div className="hero__ctas" variants={v}>
             <a href="#work" className="btn btn--primary" onClick={(e) => { e.preventDefault(); scrollToId('work'); }}>

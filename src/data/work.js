@@ -44,11 +44,11 @@ const work = [
       { value: '99.9%', label: 'uptime' },
     ],
     content: {
-      intro: 'At Covrzy, I worked on the core insurance infrastructure - building scalable backend systems that power multiple product lines.',
+      intro: 'At Covrzy, I worked on the core insurance infrastructure - building the backend systems behind multiple product lines.',
       sections: [
         {
           title: 'Scaling Reservation Infrastructure',
-          body: 'Architected and optimized AWS infra (EC2, S3, RDS, API Gateway, ALB, CloudWatch) for Travel APIs - 600K+ monthly bookings, 99.9% uptime, sub-200ms p95 latency.',
+          body: 'Built and optimized the AWS infra (EC2, S3, RDS, API Gateway, ALB, CloudWatch) behind the Travel APIs - 600K+ monthly bookings, 99.9% uptime, sub-200ms p95 latency.',
         },
         {
           title: 'Shipping New Product Lines',
@@ -68,7 +68,7 @@ const work = [
   },
   {
     slug: 'weknow',
-    company: 'Weknow Technology',
+    company: 'Weknow Technologies',
     role: 'Intern → SDE',
     year: '2023 - 24',
     highlight: 'Engineered a government survey portal serving 60,000+ users across Uttar Pradesh.',

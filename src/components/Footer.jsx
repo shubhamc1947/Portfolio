@@ -6,7 +6,7 @@ const Footer = () => {
   const [copied, setCopied] = useState(false);
 
   const copy = () => {
-    navigator.clipboard?.writeText('shubhamchat03@gmail.com');
+    navigator.clipboard?.writeText('shubhamchat20@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
   };
@@ -25,7 +25,7 @@ const Footer = () => {
             <rect x="3" y="5" width="18" height="14" rx="2"/>
             <path d="m3 7 9 6 9-6"/>
           </svg>
-          {copied ? 'Copied to clipboard' : 'shubhamchat03@gmail.com'}
+          {copied ? 'Copied to clipboard' : 'shubhamchat20@gmail.com'}
         </button>
         <div className="contact__socials">
           <a href="/shubham-chaturvedi-cv.pdf" target="_blank" rel="noreferrer">CV (PDF) ↗</a>

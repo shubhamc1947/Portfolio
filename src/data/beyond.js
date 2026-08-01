@@ -3,10 +3,10 @@ const beyond = [
     value: '250',
     unit: '+',
     label: 'students in the coding club',
-    desc: 'Co-founded and led the coding community at my college from zero - no prior club, no template, no budget. Grew it to 250+ active students and drove 7+ technical events end-to-end.',
+    desc: 'Co-founded and led the coding community at my college from zero - no prior club, no template, no budget. Grew it to 250+ active students and drove 10+ technical events end-to-end.',
   },
   {
-    value: '600',
+    value: '800',
     unit: '+',
     label: 'DSA problems solved',
     desc: "Consistent practice on LeetCode & CodeChef. Not a badge for its own sake - it's the reason production code under pressure doesn't rattle me.",

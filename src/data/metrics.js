@@ -6,8 +6,7 @@ const metrics = [
   { value: '12.6K', unit: '+', label: 'clicks driven' },
   { value: '60K', unit: '+', label: 'users, gov portal' },
   { value: '5→1', unit: 'day', label: 'process time cut' },
-  { value: '600', unit: '+', label: 'DSA problems solved' },
-  { value: '20', unit: '+', label: 'essays published' },
+  { value: '800', unit: '+', label: 'DSA problems solved' },
   { value: '250', unit: '+', label: 'students, coding club' },
 ];
 
